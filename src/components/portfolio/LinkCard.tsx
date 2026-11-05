@@ -12,9 +12,11 @@ type Props = {
   item: PortfolioLink;
   index: number;
   total: number;
+  /** Reserve a media area so text cards line up next to video cards. */
+  withMedia?: boolean;
 };
 
-export function LinkCard({ item, index, total }: Props) {
+export function LinkCard({ item, index, total, withMedia = false }: Props) {
   const platform = platformOf(item.url);
   const ytId = youTubeId(item.url);
   const handle = instagramHandle(item.url);
@@ -41,6 +43,13 @@ export function LinkCard({ item, index, total }: Props) {
           />
           <span className="absolute bottom-3 left-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-card transition duration-500 group-hover:scale-110">
             <Play className="h-4 w-4 translate-x-px fill-current" aria-hidden />
+          </span>
+        </div>
+      )}
+      {!ytId && withMedia && (
+        <div className="relative flex aspect-video items-end overflow-hidden border-b border-border bg-secondary p-5 paper-grain">
+          <span className="font-display-tight text-5xl italic text-foreground/80 transition duration-700 group-hover:text-primary">
+            {platform}
           </span>
         </div>
       )}

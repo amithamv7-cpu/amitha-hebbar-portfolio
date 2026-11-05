@@ -44,7 +44,7 @@ function Index() {
             Amitha Hebbar<span className="text-primary">.</span>
           </a>
           <nav aria-label="Sections" className="-mx-2 flex-1 overflow-x-auto">
-            <ul className="flex justify-end gap-1 whitespace-nowrap">
+            <ul className="ml-auto flex w-max gap-1 whitespace-nowrap">
               {navItems.map((n) => (
                 <li key={n.id}>
                   <a

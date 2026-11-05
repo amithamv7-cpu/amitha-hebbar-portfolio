@@ -1,4 +1,4 @@
-import { sectionCount, sections } from "@/data/portfolio";
+import { sectionCount, sections, youTubeId } from "@/data/portfolio";
 
 import { LinkCard } from "./LinkCard";
 
@@ -44,7 +44,12 @@ export function WorkSections() {
                 <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                   {group.items.map((item, i) => (
                     <li key={item.url}>
-                      <LinkCard item={item} index={i} total={group.items.length} />
+                      <LinkCard
+                        item={item}
+                        index={i}
+                        total={group.items.length}
+                        withMedia={group.items.some((g) => youTubeId(g.url))}
+                      />
                     </li>
                   ))}
                 </ul>

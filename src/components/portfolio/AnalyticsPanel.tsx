@@ -79,7 +79,7 @@ export function AnalyticsPanel() {
             People who open this portfolio site. These are not views of the linked work.
           </p>
 
-          <div className="mt-8 flex flex-1 flex-col justify-between gap-8 rounded-xl border border-ink-border p-6">
+          <div className="mt-8 flex min-h-64 flex-col justify-between gap-8 rounded-xl border border-ink-border p-6">
             <div className="flex items-start justify-between gap-4">
               <BarChart3 className="h-6 w-6 text-primary" aria-hidden />
               <NotConnected />
