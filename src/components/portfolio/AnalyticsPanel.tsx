@@ -5,11 +5,13 @@ import { allLinks, platformOf } from "@/data/portfolio";
 
 export const CONNECT_MESSAGE = "Connect analytics to see live views";
 
-function NotConnected() {
+export const EXTERNAL_UNAVAILABLE = "Views unavailable";
+
+function NotConnected({ label = "Not connected" }: { label?: string }) {
   return (
     <span className="eyebrow inline-flex shrink-0 items-center gap-2 justify-self-start self-start rounded-full border border-ink-border px-3 py-1 text-ink-muted">
       <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
-      Not connected
+      {label}
     </span>
   );
 }
@@ -36,7 +38,7 @@ function SourceRow({
           <p className="mt-3 font-display text-lg italic text-ink-foreground">{CONNECT_MESSAGE}</p>
         </div>
       </div>
-      <NotConnected />
+      <NotConnected label={`${EXTERNAL_UNAVAILABLE} · Not connected`} />
     </li>
   );
 }
@@ -76,7 +78,8 @@ export function AnalyticsPanel() {
             Portfolio website visitors
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-            People who open this portfolio site. These are not views of the linked work.
+            People who open this portfolio site. These numbers are never counted as views of the
+            linked work below.
           </p>
 
           <div className="mt-8 flex min-h-64 flex-col justify-between gap-8 rounded-xl border border-ink-border p-6">
