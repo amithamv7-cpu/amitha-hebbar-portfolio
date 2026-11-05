@@ -30,7 +30,18 @@ export function LinkCard({ item, index, total, withMedia = false }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${item.title}${subtitle ? ` — ${subtitle}` : ""}${showNumber ? `, number ${number}` : ""} on ${platform} (opens in a new tab)`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card shadow-card transition duration-500 ease-out hover:-translate-y-1 hover:border-primary/60 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className={`group relative flex h-full flex-col overflow-hidden rounded-lg border bg-card shadow-card ${item.featured ? "border-primary ring-1 ring-primary" : "border-border"}`}
+      data-featured={item.featured ? "true" : undefined}
+    >
+      <span hidden />
+    </a>
+  );
+}
+
+function _unused() {
+  return (
+    <a
+      className=" transition duration-500 ease-out hover:-translate-y-1 hover:border-primary/60 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       {ytId && (
         <div className="relative aspect-video overflow-hidden bg-muted">

@@ -6,6 +6,8 @@ export type PortfolioLink = {
   url: string;
   /** Optional label provided by the owner (e.g. an episode number). */
   tag?: string;
+  /** Highlighted in the masthead and with an accent card. */
+  featured?: boolean;
 };
 
 export type PortfolioGroup = {
@@ -75,6 +77,7 @@ export const sections: PortfolioSection[] = [
           {
             title: "Additional Instagram",
             url: "https://www.instagram.com/amitha_uvaacha?rpxt=cDc5MGxsOXpwdG5y",
+            featured: true,
           },
         ],
       },
@@ -150,6 +153,8 @@ export const sections: PortfolioSection[] = [
 
 export const allLinks = (): PortfolioLink[] =>
   sections.flatMap((s) => s.groups.flatMap((g) => g.items));
+
+export const featuredLinks = (): PortfolioLink[] => allLinks().filter((l) => l.featured);
 
 export const sectionCount = (section: PortfolioSection) =>
   section.groups.reduce((n, g) => n + g.items.length, 0);
