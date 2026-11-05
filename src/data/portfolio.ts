@@ -61,15 +61,25 @@ export const sections: PortfolioSection[] = [
     ],
   },
   {
+    id: "pratilipi",
+    title: "Pratilipi",
+    groups: [
+      {
+        items: [
+          { title: "Pratilipi profile", url: "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7" },
+          { title: "Pratilipi work", url: "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6" },
+          { title: "Pratilipi work", url: "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA" },
+        ],
+      },
+    ],
+  },
+  {
     id: "social-blogging",
     title: "Social & blogging",
     groups: [
       {
         items: [
           { title: "Facebook", url: "https://www.facebook.com/amitha.hebbar.3" },
-          { title: "Pratilipi profile", url: "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7" },
-          { title: "Pratilipi work", url: "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6" },
-          { title: "Pratilipi work", url: "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA" },
           {
             title: "Savage Sundris",
             url: "https://www.instagram.com/savage_sundris?igsh=MXR5amQ4dXk5eTZhZA==",
