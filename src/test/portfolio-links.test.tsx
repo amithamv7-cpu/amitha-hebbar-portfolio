@@ -71,7 +71,7 @@ describe("portfolio links", () => {
       s.groups.some((g) => g.items.some((i) => i.url.includes("pratilipi"))),
     );
     expect(withPratilipi.map((s) => s.title)).toEqual(["Pratilipi"]);
-    expect(withPratilipi[0].groups.flatMap((g) => g.items.map((i) => i.url))).toEqual([
+    expect(withPratilipi[0]!.groups.flatMap((g) => g.items.map((i) => i.url))).toEqual([
       "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7",
       "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6",
       "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA",
