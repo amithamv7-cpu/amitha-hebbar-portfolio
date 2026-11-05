@@ -15,10 +15,10 @@ const EXPECTED_URLS = [
   "https://drive.google.com/drive/folders/1BRIYqEX1vswpBXcBsMu4IcxW8edz4TjI?usp=drive_link",
   "https://tv9kannada.com/blog/a-loving-love-letter-to-my-nalla-who-fulfills-my-wishes-valentines-day-story-in-kannada-akp-au53-520142.html",
   "https://www.vijayavani.net/top-ganesh-pandals-to-visit-in-bangalore",
-  "https://www.facebook.com/amitha.hebbar.3",
   "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7",
   "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6",
   "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA",
+  "https://www.facebook.com/amitha.hebbar.3",
   "https://www.instagram.com/savage_sundris?igsh=MXR5amQ4dXk5eTZhZA==",
   "https://www.instagram.com/amitha_uvaacha?rpxt=cDc5MGxsOXpwdG5y",
   "https://youtu.be/JTzWO45Q2WM",
@@ -63,6 +63,18 @@ describe("portfolio links", () => {
   it("features the additional Instagram link prominently", () => {
     expect(featuredLinks().map((l) => l.url)).toEqual([
       "https://www.instagram.com/amitha_uvaacha?rpxt=cDc5MGxsOXpwdG5y",
+    ]);
+  });
+
+  it("groups every Pratilipi link under one section titled Pratilipi", () => {
+    const withPratilipi = sections.filter((s) =>
+      s.groups.some((g) => g.items.some((i) => i.url.includes("pratilipi"))),
+    );
+    expect(withPratilipi.map((s) => s.title)).toEqual(["Pratilipi"]);
+    expect(withPratilipi[0].groups.flatMap((g) => g.items.map((i) => i.url))).toEqual([
+      "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7",
+      "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6",
+      "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA",
     ]);
   });
 
