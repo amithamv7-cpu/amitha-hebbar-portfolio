@@ -78,11 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Amitha Hebbar — Portfolio" },
-      { name: "description", content: "Portfolio of Amitha Hebbar." },
-      { name: "author", content: "Amitha Hebbar" },
-      { property: "og:title", content: "Amitha Hebbar — Portfolio" },
-      { property: "og:description", content: "Portfolio of Amitha Hebbar." },
+      { title: "Amitha M V — Portfolio" },
+      { name: "description", content: "Portfolio and résumé of Amitha M V." },
+      { name: "author", content: "Amitha M V" },
+      { property: "og:title", content: "Amitha M V — Portfolio" },
+      { property: "og:description", content: "Portfolio and résumé of Amitha M V." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap",
       },
       {
         rel: "stylesheet",
