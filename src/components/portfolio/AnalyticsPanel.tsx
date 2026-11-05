@@ -7,7 +7,7 @@ export const CONNECT_MESSAGE = "Connect analytics to see live views";
 
 function NotConnected() {
   return (
-    <span className="eyebrow inline-flex items-center gap-2 rounded-full border border-ink-border px-3 py-1 text-ink-muted">
+    <span className="eyebrow inline-flex shrink-0 items-center gap-2 justify-self-start self-start rounded-full border border-ink-border px-3 py-1 text-ink-muted">
       <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
       Not connected
     </span>
