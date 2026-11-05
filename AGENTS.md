@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- All portfolio links live in `src/data/portfolio.ts`; components render from that data only, so link content has one source of truth and `src/test/portfolio-links.test.tsx` can assert exact URLs.
+- Platform labels, hosts, YouTube thumbnails and Instagram handles are derived from the URLs at render time, never hand-written, so no unprovided content enters the page.
