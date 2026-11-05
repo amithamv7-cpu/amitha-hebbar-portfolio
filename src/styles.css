@@ -186,9 +186,10 @@
 @utility marker {
   background-image: linear-gradient(
     to top,
-    var(--color-accent) 0,
-    var(--color-accent) 38%,
-    transparent 38%
+    transparent 16%,
+    var(--color-accent) 16%,
+    var(--color-accent) 44%,
+    transparent 44%
   );
   padding-inline: 0.06em;
 }

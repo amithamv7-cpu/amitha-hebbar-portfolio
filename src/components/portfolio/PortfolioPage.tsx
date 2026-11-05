@@ -128,7 +128,7 @@ export function PortfolioPage() {
         {/* Focus marquee (decorative; the same words are in the headline above) */}
         <div
           aria-hidden
-          className="overflow-hidden border-y-2 border-foreground bg-foreground py-3 text-background"
+          className="relative z-10 overflow-hidden border-y-2 border-foreground bg-foreground py-3 text-background"
         >
           <div className="animate-marquee flex w-max gap-8 whitespace-nowrap font-display text-2xl font-bold tracking-tight md:text-3xl">
             {Array.from({ length: 2 }).flatMap((_, r) =>
