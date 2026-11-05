@@ -1,9 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Instagram } from "lucide-react";
 
 import { AnalyticsPanel } from "@/components/portfolio/AnalyticsPanel";
 import { WorkSections } from "@/components/portfolio/WorkSections";
-import { sectionCount, sections } from "@/data/portfolio";
+import {
+  displayHost,
+  featuredLinks,
+  instagramHandle,
+  sectionCount,
+  sections,
+} from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -71,6 +77,30 @@ function Index() {
               <span className="italic">Hebbar</span>
               <span className="text-primary">.</span>
             </h1>
+            {featuredLinks().map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${link.title} — ${instagramHandle(link.url) ?? displayHost(link.url)} (opens in a new tab)`}
+                className="group mt-10 inline-flex max-w-full items-center gap-4 rounded-full border border-primary bg-card py-2 pl-2 pr-5 shadow-card transition duration-500 hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <Instagram className="h-5 w-5" aria-hidden />
+                </span>
+                <span className="min-w-0">
+                  <span className="eyebrow block text-muted-foreground">{link.title}</span>
+                  <span className="block truncate font-display text-xl italic text-foreground group-hover:text-primary">
+                    {instagramHandle(link.url) ?? displayHost(link.url)}
+                  </span>
+                </span>
+                <ArrowUpRight
+                  className="h-4 w-4 shrink-0 text-primary transition duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  aria-hidden
+                />
+              </a>
+            ))}
           </div>
 
           <nav

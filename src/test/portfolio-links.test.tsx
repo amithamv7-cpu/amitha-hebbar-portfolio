@@ -1,9 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { AnalyticsPanel, CONNECT_MESSAGE } from "@/components/portfolio/AnalyticsPanel";
+import {
+  AnalyticsPanel,
+  CONNECT_MESSAGE,
+  EXTERNAL_UNAVAILABLE,
+} from "@/components/portfolio/AnalyticsPanel";
 import { WorkSections } from "@/components/portfolio/WorkSections";
-import { allLinks, NAMMURA_EPISODE_578_URL, sections } from "@/data/portfolio";
+import { allLinks, featuredLinks, NAMMURA_EPISODE_578_URL, sections } from "@/data/portfolio";
 
 // Exactly the URLs Amitha supplied, with the episode 578 correction applied.
 const EXPECTED_URLS = [
@@ -47,7 +51,19 @@ describe("portfolio links", () => {
 
   it("uses the corrected Nammura Varthe episode 578 URL", () => {
     expect(NAMMURA_EPISODE_578_URL).toBe("https://youtu.be/JTzWO45Q2WM");
+    // Capital letter O (not zero) right after "JTzW", and no hyphen.
+    const id = NAMMURA_EPISODE_578_URL.split("/").pop()!;
+    expect(id.charAt(4)).toBe("O");
+    expect(id.includes("-")).toBe(false);
     expect(allLinks().some((l) => l.url.includes("JTzW0-45Q2WM"))).toBe(false);
+    const nammura = allLinks().filter((l) => l.title === "Nammura Varthe");
+    expect(nammura[0]).toMatchObject({ url: NAMMURA_EPISODE_578_URL, tag: "Episode 578" });
+  });
+
+  it("features the additional Instagram link prominently", () => {
+    expect(featuredLinks().map((l) => l.url)).toEqual([
+      "https://www.instagram.com/amitha_uvaacha?rpxt=cDc5MGxsOXpwdG5y",
+    ]);
   });
 
   it("has no practice journals section", () => {
@@ -68,6 +84,8 @@ describe("portfolio links", () => {
     render(<AnalyticsPanel />);
     // One message for website visitors + one per external source group.
     expect(screen.getAllByText(CONNECT_MESSAGE)).toHaveLength(4);
+    // Every external source (YouTube, Meta, others) is marked unavailable.
+    expect(screen.getAllByText(new RegExp(EXTERNAL_UNAVAILABLE))).toHaveLength(3);
     expect(screen.queryByText(/\b\d[\d,.]*\s*(views|visitors)\b/i)).toBeNull();
   });
 });

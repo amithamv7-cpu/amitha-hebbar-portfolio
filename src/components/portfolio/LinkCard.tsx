@@ -29,8 +29,11 @@ export function LinkCard({ item, index, total, withMedia = false }: Props) {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
+      data-featured={item.featured ? "true" : undefined}
       aria-label={`${item.title}${subtitle ? ` — ${subtitle}` : ""}${showNumber ? `, number ${number}` : ""} on ${platform} (opens in a new tab)`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card shadow-card transition duration-500 ease-out hover:-translate-y-1 hover:border-primary/60 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className={`group relative flex h-full flex-col overflow-hidden rounded-lg border bg-card shadow-card transition duration-500 ease-out hover:-translate-y-1 hover:border-primary/60 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+        item.featured ? "border-primary ring-1 ring-primary" : "border-border"
+      }`}
     >
       {ytId && (
         <div className="relative aspect-video overflow-hidden bg-muted">
@@ -64,7 +67,13 @@ export function LinkCard({ item, index, total, withMedia = false }: Props) {
             {item.title}
           </h4>
           {subtitle && (
-            <p className="mt-1 font-display text-base italic text-muted-foreground">{subtitle}</p>
+            <p
+              className={`mt-1 font-display italic ${
+                item.featured ? "text-xl text-primary" : "text-base text-muted-foreground"
+              }`}
+            >
+              {subtitle}
+            </p>
           )}
         </div>
 
