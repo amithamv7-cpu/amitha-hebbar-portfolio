@@ -25,7 +25,7 @@ const focusRing = "focus-visible:outline-none focus-visible:ring-4 focus-visible
 
 export function PortfolioPage() {
   return (
-    <div id="top" className="min-h-screen overflow-x-clip bg-background">
+    <div id="top" className="paper-grain min-h-screen overflow-x-clip bg-background">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
@@ -33,7 +33,7 @@ export function PortfolioPage() {
         Skip to content
       </a>
 
-      <header className="sticky top-0 z-30 border-b-2 border-foreground bg-background/85 backdrop-blur-md">
+      <header className="sticky top-0 z-30 border-b-2 border-foreground bg-background/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 md:px-10">
           <a
             href="#top"
@@ -68,7 +68,7 @@ export function PortfolioPage() {
         {/* Intro */}
         <section
           aria-labelledby="intro-name"
-          className="relative mx-auto max-w-7xl px-4 pb-16 pt-12 md:px-10 md:pb-24 md:pt-20"
+          className="relative mx-auto max-w-7xl px-4 pb-16 pt-12 md:px-10 md:pb-24 md:pt-16"
         >
           <div
             aria-hidden
@@ -79,7 +79,7 @@ export function PortfolioPage() {
             className="pointer-events-none absolute -left-32 bottom-0 h-64 w-64 rounded-full bg-pop-sky opacity-60 blur-3xl"
           />
 
-          <div className="relative grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-10">
+          <div className="relative grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-10">
             <div className="lg:col-span-7">
               <p className="eyebrow animate-rise inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-foreground">
                 <span className="relative flex h-2 w-2" aria-hidden>
@@ -91,15 +91,15 @@ export function PortfolioPage() {
 
               <h1
                 id="intro-name"
-                className="animate-rise mt-6 font-display-tight text-[clamp(4.5rem,22vw,11.5rem)] text-foreground [animation-delay:80ms]"
+                className="animate-rise mt-6 font-display-tight text-[clamp(4.2rem,16vw,9.5rem)] text-foreground [animation-delay:80ms]"
               >
                 <span className="block">Amitha</span>{" "}
                 <span className="marker">M V</span>
               </h1>
 
-              <p className="animate-rise mt-8 max-w-2xl font-display text-2xl font-semibold leading-snug tracking-tight text-foreground [animation-delay:160ms] md:text-[1.75rem]">
+              <p className="animate-rise mt-7 max-w-2xl font-display text-xl font-semibold leading-snug tracking-tight text-foreground [animation-delay:160ms] md:text-2xl">
                 {headlineRole}
-                <span className="text-primary"> | </span>
+                <span className="text-primary"> / </span>
                 <span className="text-muted-foreground">{headlineFocus}</span>
               </p>
 
@@ -151,7 +151,7 @@ export function PortfolioPage() {
               aria-label="Quick contact"
               className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
             >
-              <div className="rounded-3xl border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
+              <div className="relative rounded-[1.5rem] border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
                 {current && (
                   <div className="rounded-2xl bg-ink p-4 text-ink-foreground">
                     <p className="eyebrow flex items-center gap-2 text-ink-muted">
@@ -193,7 +193,7 @@ export function PortfolioPage() {
         {/* Focus marquee (decorative; the same words are in the headline above) */}
         <div
           aria-hidden
-          className="relative z-10 overflow-hidden border-y-2 border-foreground bg-foreground py-2.5 text-background"
+          className="relative z-10 overflow-hidden border-y-2 border-foreground bg-pop-orange py-2.5 text-foreground"
         >
           <div className="animate-marquee flex w-max gap-8 whitespace-nowrap font-display text-xl font-bold tracking-tight md:text-2xl">
             {Array.from({ length: 2 }).flatMap((_, r) =>
@@ -220,7 +220,7 @@ export function PortfolioPage() {
             <p className="eyebrow text-muted-foreground">Portfolio</p>
             <h2
               id="selected-work-title"
-              className="mt-3 font-display-tight text-[clamp(3.25rem,11vw,8rem)] text-foreground"
+              className="mt-3 font-display-tight text-[clamp(3.25rem,10vw,7rem)] text-foreground"
             >
               Selected <span className="marker">Work</span>
             </h2>
@@ -254,7 +254,7 @@ export function PortfolioPage() {
           aria-labelledby="contact-title"
           className="mx-auto max-w-7xl scroll-mt-24 px-4 py-24 md:px-10 md:py-32"
         >
-          <div className="reveal rounded-[2rem] border-2 border-foreground bg-ink px-5 py-10 text-ink-foreground shadow-pop-lg sm:px-8 md:px-12 md:py-14">
+          <div className="reveal rounded-[1.5rem] border-2 border-foreground bg-ink px-5 py-10 text-ink-foreground shadow-pop-lg sm:px-8 md:px-12 md:py-14">
             <p className="eyebrow text-accent">Get in touch</p>
             <h2
               id="contact-title"
