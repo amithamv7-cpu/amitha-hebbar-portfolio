@@ -62,13 +62,17 @@ export const sections: PortfolioSection[] = [
   },
   {
     id: "pratilipi",
-    title: "Pratilipi",
+    title: "Pratilipi Writing",
     groups: [
       {
+        label: "Profile",
+        items: [{ title: "Pratilipi profile", url: "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7" }],
+      },
+      {
+        label: "Works",
         items: [
-          { title: "Pratilipi profile", url: "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7" },
-          { title: "Pratilipi work", url: "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6" },
-          { title: "Pratilipi work", url: "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA" },
+          { title: "Work 1", url: "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6" },
+          { title: "Work 2", url: "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA" },
         ],
       },
     ],
@@ -126,19 +130,19 @@ export const sections: PortfolioSection[] = [
   },
   {
     id: "digital-stories",
-    title: "Digital stories",
+    title: "Digital Stories",
     groups: [
       {
         items: [
-          { title: "Digital story", url: "https://www.facebook.com/share/v/EnbQRuFxLWEpYoMQ/?mibextid=jmPrMh" },
-          { title: "Digital story", url: "https://www.facebook.com/share/v/yzgwtAdYV4SuBNdn/?mibextid=jmPrMh" },
-          { title: "Digital story", url: "https://www.facebook.com/share/v/d4kmBuJbSsuL6xLP/?mibextid=jmPrMh" },
-          { title: "Digital story", url: "https://www.facebook.com/share/v/dLoGQuJyYwfaqEJF/?mibextid=jmPrMh" },
-          { title: "Digital story", url: "https://www.facebook.com/share/v/GJh68gebtTouKEAW/?mibextid=jmPrMh" },
-          {
-            title: "Digital story",
-            url: "https://m.facebook.com/story.php?story_fbid=759351612682927&id=100069562481080&sfnsn=wiwspwa&mibextid=2Rb1fB",
-          },
+          { title: "Story 01", url: "https://fb.watch/KIkiHhOvle/" },
+          { title: "Story 02", url: "https://www.facebook.com/share/v/1EZRLudx7N/" },
+          { title: "Story 03", url: "https://www.facebook.com/share/v/1ECm5tqR5k/" },
+          { title: "Story 04", url: "https://www.facebook.com/share/v/1A9gnZq6sq/" },
+          { title: "Story 05", url: "https://www.facebook.com/DeptofJournalism/videos/2240589502953516/?mibextid=Nif5oz" },
+          { title: "Story 06", url: "https://www.facebook.com/share/v/19hszTYhkS/" },
+          { title: "Story 07", url: "https://www.facebook.com/share/v/1CwnPKLwiC/" },
+          { title: "Story 08", url: "https://www.facebook.com/share/v/1HBgB8owEC/" },
+          { title: "Story 09", url: "https://www.facebook.com/share/v/1KYwVGEZ7u/" },
         ],
       },
     ],
@@ -182,7 +186,7 @@ export type Platform =
 export function platformOf(url: string): Platform {
   const host = new URL(url).hostname.replace(/^www\.|^m\./, "");
   if (host === "youtu.be" || host.endsWith("youtube.com")) return "YouTube";
-  if (host.endsWith("facebook.com")) return "Facebook";
+  if (host.endsWith("facebook.com") || host === "fb.watch") return "Facebook";
   if (host.endsWith("instagram.com")) return "Instagram";
   if (host === "drive.google.com") return "Google Drive";
   if (host.startsWith("pratilipi")) return "Pratilipi";

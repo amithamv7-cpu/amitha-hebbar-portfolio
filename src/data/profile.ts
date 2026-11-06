@@ -44,6 +44,12 @@ export const profile = {
   certifications: [
     { name: "UGC-NET Journalism & Mass Communication", detail: "Qualified May 2023" },
   ] as Certification[],
+  contact: {
+    email: "amithamv7@gmail.com",
+    phone: "+91 94485 12260",
+    linkedin:
+      "https://www.linkedin.com/in/amitha-m-v-631162235?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  },
   /** Set to a real uploaded file URL to show a download button. */
   resumeUrl: null as string | null,
 };

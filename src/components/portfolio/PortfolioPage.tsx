@@ -1,42 +1,53 @@
-import { ArrowDown, ArrowUp, ArrowUpRight, Download, Instagram } from "lucide-react";
+import { ArrowDown, ArrowUp, ArrowUpRight, Download, Instagram, Mail } from "lucide-react";
 
-import { displayHost, featuredLinks, instagramHandle } from "@/data/portfolio";
+import { displayHost, featuredLinks, instagramHandle, sectionCount, sections } from "@/data/portfolio";
 import { profile } from "@/data/profile";
 
-import { AnalyticsPanel } from "./AnalyticsPanel";
+import { accentBg, accentFor } from "./accents";
+import { ContactList, ContactTiles } from "./ContactLinks";
 import { ResumeSections } from "./ResumeSections";
 import { WorkSections } from "./WorkSections";
 
 const [headlineRole, headlineFocus] = profile.headline.split(" | ");
 const focusAreas = headlineFocus?.split(/,\s*|\s*&\s*/) ?? [];
+const current = profile.experience.find((e) => e.end === "Present");
 
 const navItems = [
   ...(profile.summary ? [{ id: "summary", title: "Summary" }] : []),
   ...(profile.skills.length ? [{ id: "skills", title: "Skills" }] : []),
   { id: "experience", title: "Experience" },
   { id: "education", title: "Education" },
-  { id: "selected-work", title: "Selected Work" },
-  { id: "analytics", title: "Analytics" },
+  { id: "selected-work", title: "Work" },
+  { id: "contact", title: "Contact" },
 ];
+
+const focusRing = "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40";
 
 export function PortfolioPage() {
   return (
     <div id="top" className="min-h-screen overflow-x-clip bg-background">
-      <header className="sticky top-0 z-30 border-b-2 border-foreground bg-background/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 md:px-10">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
+      >
+        Skip to content
+      </a>
+
+      <header className="sticky top-0 z-30 border-b-2 border-foreground bg-background/85 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 md:px-10">
           <a
             href="#top"
-            className="shrink-0 rounded-full bg-foreground px-3.5 py-1.5 font-display text-base font-bold tracking-tight text-background focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40"
+            className={`shrink-0 rounded-full bg-foreground px-3.5 py-1.5 font-display text-base font-bold tracking-tight text-background ${focusRing}`}
           >
             {profile.name}
           </a>
           <nav aria-label="Sections" className="-mr-4 flex-1 overflow-x-auto pr-4 md:mr-0 md:pr-0">
-            <ul className="ml-auto flex w-max gap-1.5 whitespace-nowrap">
+            <ul className="ml-auto flex w-max gap-1 whitespace-nowrap">
               {navItems.map((n) => (
                 <li key={n.id}>
                   <a
                     href={`#${n.id}`}
-                    className="block rounded-full border-2 border-transparent px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:border-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40"
+                    className={`block rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground ${focusRing}`}
                   >
                     {n.title}
                   </a>
@@ -44,98 +55,152 @@ export function PortfolioPage() {
               ))}
             </ul>
           </nav>
+          <a
+            href={`mailto:${profile.contact.email}`}
+            className={`hidden shrink-0 items-center gap-2 rounded-full border-2 border-foreground bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground transition hover:-translate-y-0.5 hover:shadow-pop md:inline-flex ${focusRing}`}
+          >
+            <Mail className="h-3.5 w-3.5" aria-hidden /> Email me
+          </a>
         </div>
       </header>
 
-      <main>
+      <main id="main">
         {/* Intro */}
         <section
           aria-labelledby="intro-name"
-          className="relative mx-auto max-w-7xl px-4 pb-14 pt-14 md:px-10 md:pb-20 md:pt-24"
+          className="relative mx-auto max-w-7xl px-4 pb-16 pt-12 md:px-10 md:pb-24 md:pt-20"
         >
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-16 top-10 h-64 w-64 rounded-full bg-pop-pink opacity-60 blur-3xl md:h-96 md:w-96"
+            className="pointer-events-none absolute -right-24 -top-10 h-72 w-72 rounded-full bg-pop-pink opacity-50 blur-3xl md:h-[28rem] md:w-[28rem]"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-24 bottom-0 h-56 w-56 rounded-full bg-pop-sky opacity-70 blur-3xl"
+            className="pointer-events-none absolute -left-32 bottom-0 h-64 w-64 rounded-full bg-pop-sky opacity-60 blur-3xl"
           />
 
-          <div className="relative">
-            <p className="eyebrow animate-rise inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-foreground">
-              <span className="h-2 w-2 rounded-full bg-primary" aria-hidden />
-              Portfolio & Résumé
-            </p>
+          <div className="relative grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-10">
+            <div className="lg:col-span-7">
+              <p className="eyebrow animate-rise inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-foreground">
+                <span className="relative flex h-2 w-2" aria-hidden>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                </span>
+                Portfolio & Résumé
+              </p>
 
-            <h1
-              id="intro-name"
-              className="animate-rise mt-6 font-display-tight text-[clamp(4.25rem,17vw,13rem)] text-foreground [animation-delay:80ms]"
-            >
-              Amitha <span className="marker">M V</span>
-            </h1>
-
-            <p className="animate-rise mt-8 max-w-3xl font-display text-2xl font-semibold leading-snug tracking-tight text-foreground [animation-delay:160ms] md:text-3xl">
-              {headlineRole}
-              <span className="text-primary"> | </span>
-              <span className="text-muted-foreground">{headlineFocus}</span>
-            </p>
-
-            <div className="animate-rise mt-10 flex flex-wrap items-center gap-3 [animation-delay:240ms]">
-              <a
-                href="#selected-work"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 py-3 font-medium text-primary-foreground shadow-pop transition hover:-translate-y-0.5 hover:shadow-pop-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40"
+              <h1
+                id="intro-name"
+                className="animate-rise mt-6 font-display-tight text-[clamp(4.5rem,22vw,11.5rem)] text-foreground [animation-delay:80ms]"
               >
-                Selected Work <ArrowDown className="h-4 w-4" aria-hidden />
-              </a>
-              {profile.resumeUrl && (
+                <span className="block">Amitha</span>{" "}
+                <span className="marker">M V</span>
+              </h1>
+
+              <p className="animate-rise mt-8 max-w-2xl font-display text-2xl font-semibold leading-snug tracking-tight text-foreground [animation-delay:160ms] md:text-[1.75rem]">
+                {headlineRole}
+                <span className="text-primary"> | </span>
+                <span className="text-muted-foreground">{headlineFocus}</span>
+              </p>
+
+              <div className="animate-rise mt-9 flex flex-wrap items-center gap-3 [animation-delay:240ms]">
                 <a
-                  href={profile.resumeUrl}
-                  download
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-5 py-3 font-medium text-foreground shadow-pop transition hover:-translate-y-0.5 hover:shadow-pop-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40"
+                  href="#selected-work"
+                  className={`inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 py-3 font-medium text-primary-foreground shadow-pop transition hover:-translate-y-0.5 hover:shadow-pop-lg ${focusRing}`}
                 >
-                  Download résumé <Download className="h-4 w-4" aria-hidden />
+                  Selected Work <ArrowDown className="h-4 w-4" aria-hidden />
                 </a>
-              )}
-              {featuredLinks().map((link) => (
-                <a
-                  key={link.url}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${link.title} — ${instagramHandle(link.url) ?? displayHost(link.url)} (opens in a new tab)`}
-                  className="group inline-flex max-w-full items-center gap-3 rounded-full border-2 border-foreground bg-accent py-1.5 pl-1.5 pr-4 text-accent-foreground shadow-pop transition hover:-translate-y-0.5 hover:shadow-pop-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40"
-                >
-                  <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-foreground text-background">
-                    <Instagram className="h-4 w-4" aria-hidden />
-                  </span>
-                  <span className="min-w-0 leading-tight">
-                    <span className="eyebrow block">{link.title}</span>
-                    <span className="block truncate font-display text-lg font-bold">
-                      {instagramHandle(link.url) ?? displayHost(link.url)}
+                {profile.resumeUrl && (
+                  <a
+                    href={profile.resumeUrl}
+                    download
+                    className={`inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-5 py-3 font-medium text-foreground shadow-pop transition hover:-translate-y-0.5 hover:shadow-pop-lg ${focusRing}`}
+                  >
+                    Download résumé <Download className="h-4 w-4" aria-hidden />
+                  </a>
+                )}
+                {featuredLinks().map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${link.title} — ${instagramHandle(link.url) ?? displayHost(link.url)} (opens in a new tab)`}
+                    className={`group inline-flex max-w-full items-center gap-3 rounded-full border-2 border-foreground bg-accent py-1.5 pl-1.5 pr-4 text-accent-foreground shadow-pop transition hover:-translate-y-0.5 hover:shadow-pop-lg ${focusRing}`}
+                  >
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-foreground text-background">
+                      <Instagram className="h-4 w-4" aria-hidden />
                     </span>
-                  </span>
-                  <ArrowUpRight
-                    className="h-4 w-4 shrink-0 transition group-hover:rotate-45"
-                    aria-hidden
-                  />
-                </a>
-              ))}
+                    <span className="min-w-0 leading-tight">
+                      <span className="eyebrow block">{link.title}</span>
+                      <span className="block truncate font-display text-lg font-bold">
+                        {instagramHandle(link.url) ?? displayHost(link.url)}
+                      </span>
+                    </span>
+                    <ArrowUpRight
+                      className="h-4 w-4 shrink-0 transition group-hover:rotate-45"
+                      aria-hidden
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
+
+            {/* Recruiter quick card */}
+            <aside
+              aria-label="Quick contact"
+              className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
+            >
+              <div className="rounded-3xl border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
+                {current && (
+                  <div className="rounded-2xl bg-ink p-4 text-ink-foreground">
+                    <p className="eyebrow flex items-center gap-2 text-ink-muted">
+                      <span className="h-2 w-2 rounded-full bg-accent" aria-hidden />
+                      Currently
+                    </p>
+                    <p className="mt-2 font-display text-2xl font-bold tracking-tight">
+                      {current.organization}
+                    </p>
+                    <p className="mt-0.5 font-mono text-xs text-ink-muted">
+                      {current.start} – {current.end}
+                    </p>
+                  </div>
+                )}
+
+                {focusAreas.length > 0 && (
+                  <ul className="mt-4 flex flex-wrap gap-2" aria-label="Focus areas">
+                    {focusAreas.map((f, i) => (
+                      <li
+                        key={f}
+                        className={`rounded-full border-2 border-foreground px-3 py-1 text-sm font-semibold text-foreground ${
+                          [accentBg.lime, accentBg.pink, accentBg.sky][i % 3]
+                        }`}
+                      >
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <div className="mt-3">
+                  <ContactList />
+                </div>
+              </div>
+            </aside>
           </div>
         </section>
 
         {/* Focus marquee (decorative; the same words are in the headline above) */}
         <div
           aria-hidden
-          className="relative z-10 overflow-hidden border-y-2 border-foreground bg-foreground py-3 text-background"
+          className="relative z-10 overflow-hidden border-y-2 border-foreground bg-foreground py-2.5 text-background"
         >
-          <div className="animate-marquee flex w-max gap-8 whitespace-nowrap font-display text-2xl font-bold tracking-tight md:text-3xl">
+          <div className="animate-marquee flex w-max gap-8 whitespace-nowrap font-display text-xl font-bold tracking-tight md:text-2xl">
             {Array.from({ length: 2 }).flatMap((_, r) =>
               ["English", "ಕನ್ನಡ", ...focusAreas].map((word, i) => (
                 <span key={`${r}-${i}`} className="flex items-center gap-8">
                   {word}
-                  <span className="inline-block h-3 w-3 rounded-full bg-accent" />
+                  <span className="inline-block h-2.5 w-2.5 rotate-45 bg-accent" />
                 </span>
               )),
             )}
@@ -152,20 +217,56 @@ export function PortfolioPage() {
           className="mx-auto max-w-7xl scroll-mt-24 px-4 pt-24 md:px-10 md:pt-32"
         >
           <div className="mb-14 md:mb-20">
+            <p className="eyebrow text-muted-foreground">Portfolio</p>
             <h2
               id="selected-work-title"
-              className="font-display-tight text-[clamp(3.25rem,11vw,8rem)] text-foreground"
+              className="mt-3 font-display-tight text-[clamp(3.25rem,11vw,8rem)] text-foreground"
             >
               Selected <span className="marker">Work</span>
             </h2>
             <p className="mt-4 text-muted-foreground">Every card opens the original in a new tab.</p>
+
+            <nav aria-label="Work categories" className="mt-8">
+              <ul className="flex flex-wrap gap-2">
+                {sections.map((s) => (
+                  <li key={s.id}>
+                    <a
+                      href={`#${s.id}`}
+                      className={`inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card py-1 pl-1 pr-3.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:shadow-pop ${focusRing}`}
+                    >
+                      <span
+                        className={`inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1.5 font-mono text-[0.6875rem] ${accentBg[accentFor(s.id)]}`}
+                      >
+                        {sectionCount(s)}
+                      </span>
+                      {s.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
           <WorkSections />
         </section>
 
-        <div className="mx-auto max-w-7xl px-4 py-24 md:px-10 md:py-32">
-          <AnalyticsPanel />
-        </div>
+        <section
+          id="contact"
+          aria-labelledby="contact-title"
+          className="mx-auto max-w-7xl scroll-mt-24 px-4 py-24 md:px-10 md:py-32"
+        >
+          <div className="reveal rounded-[2rem] border-2 border-foreground bg-ink px-5 py-10 text-ink-foreground shadow-pop-lg sm:px-8 md:px-12 md:py-14">
+            <p className="eyebrow text-accent">Get in touch</p>
+            <h2
+              id="contact-title"
+              className="mt-3 font-display-tight text-[clamp(3rem,10vw,6.5rem)] text-ink-foreground"
+            >
+              Contact
+            </h2>
+            <div className="mt-10">
+              <ContactTiles />
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="border-t-2 border-foreground">
@@ -175,7 +276,7 @@ export function PortfolioPage() {
           </p>
           <a
             href="#top"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-foreground px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
+            className={`inline-flex items-center gap-2 rounded-full border-2 border-foreground px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent ${focusRing}`}
           >
             Back to top <ArrowUp className="h-3.5 w-3.5" aria-hidden />
           </a>
