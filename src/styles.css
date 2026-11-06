@@ -75,52 +75,52 @@
   --popover: oklch(0.995 0.004 95);
   --popover-foreground: oklch(0.18 0.025 275);
 
-  /* Cobalt primary */
-  --primary: oklch(0.5 0.23 264);
+  /* Ink primary */
+  --primary: oklch(0.22 0.025 55);
   --primary-foreground: oklch(0.985 0.005 95);
 
-  /* Acid lime accent */
-  --accent: oklch(0.91 0.2 122);
+  /* Warm butter accent */
+  --accent: oklch(0.88 0.13 88);
   --accent-foreground: oklch(0.18 0.025 275);
 
-  --secondary: oklch(0.945 0.012 95);
+  --secondary: oklch(0.94 0.025 80);
   --secondary-foreground: oklch(0.18 0.025 275);
-  --muted: oklch(0.945 0.012 95);
-  --muted-foreground: oklch(0.44 0.02 275);
+  --muted: oklch(0.94 0.025 80);
+  --muted-foreground: oklch(0.46 0.025 55);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0.005 95);
-  --border: oklch(0.87 0.012 95);
-  --input: oklch(0.87 0.012 95);
-  --ring: oklch(0.5 0.23 264);
+  --border: oklch(0.76 0.025 75);
+  --input: oklch(0.76 0.025 75);
+  --ring: oklch(0.56 0.11 320);
 
   /* Pop accents */
-  --pop-lime: oklch(0.91 0.2 122);
-  --pop-pink: oklch(0.83 0.13 355);
-  --pop-orange: oklch(0.81 0.15 60);
-  --pop-sky: oklch(0.86 0.09 225);
+  --pop-lime: oklch(0.91 0.07 105);
+  --pop-pink: oklch(0.88 0.07 350);
+  --pop-orange: oklch(0.89 0.09 78);
+  --pop-sky: oklch(0.87 0.07 295);
 
   /* Ink panel */
-  --ink: oklch(0.18 0.025 275);
+  --ink: oklch(0.22 0.025 55);
   --ink-foreground: oklch(0.97 0.01 95);
   --ink-muted: oklch(0.74 0.02 275);
-  --ink-border: oklch(0.33 0.03 275);
+  --ink-border: oklch(0.39 0.025 55);
 
   --shadow-pop: 4px 4px 0 0 var(--foreground);
   --shadow-pop-lg: 7px 7px 0 0 var(--foreground);
 
-  --chart-1: oklch(0.5 0.23 264);
-  --chart-2: oklch(0.91 0.2 122);
-  --chart-3: oklch(0.83 0.13 355);
-  --chart-4: oklch(0.81 0.15 60);
-  --chart-5: oklch(0.86 0.09 225);
+  --chart-1: oklch(0.22 0.025 55);
+  --chart-2: oklch(0.91 0.07 105);
+  --chart-3: oklch(0.88 0.07 350);
+  --chart-4: oklch(0.89 0.09 78);
+  --chart-5: oklch(0.87 0.07 295);
   --sidebar: oklch(0.975 0.01 95);
   --sidebar-foreground: oklch(0.18 0.025 275);
-  --sidebar-primary: oklch(0.5 0.23 264);
+  --sidebar-primary: oklch(0.22 0.025 55);
   --sidebar-primary-foreground: oklch(0.985 0.005 95);
   --sidebar-accent: oklch(0.945 0.012 95);
   --sidebar-accent-foreground: oklch(0.18 0.025 275);
   --sidebar-border: oklch(0.87 0.012 95);
-  --sidebar-ring: oklch(0.5 0.23 264);
+  --sidebar-ring: oklch(0.56 0.11 320);
 }
 
 @layer base {
@@ -249,3 +249,4 @@
     animation-range: entry 0% entry 40%;
   }
 }
+\n\n@utility paper-grain {\n  background-image: radial-gradient(oklch(0.22 0.025 55 / 5%) 0.7px, transparent 0.7px);\n  background-size: 6px 6px;\n}\n\n@utility doodle-note {\n  border: 2px dashed currentColor;\n  border-radius: 1rem 1.35rem 1rem 1.2rem;\n  transform: rotate(-2deg);\n}\n
