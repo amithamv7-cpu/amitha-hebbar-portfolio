@@ -31,5 +31,5 @@ use the editor.
 
 ## Project rules
 
-- All portfolio links live in `src/data/portfolio.ts`; components render from that data only, so link content has one source of truth and `src/test/portfolio-links.test.tsx` can assert exact URLs.
+- All portfolio links live in `src/data/portfolio.ts` and contact/résumé facts in `src/data/profile.ts`; components render from that data only, so content has one source of truth and the tests in `src/test/` can assert exact values.
 - Platform labels, hosts, YouTube thumbnails and Instagram handles are derived from the URLs at render time, never hand-written, so no unprovided content enters the page.

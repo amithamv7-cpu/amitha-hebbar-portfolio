@@ -58,6 +58,19 @@ describe("profile content", () => {
     );
   });
 
+  it("links the exact email, phone and LinkedIn in the intro card and Contact section", () => {
+    const { container } = render(<PortfolioPage />);
+    const hrefs = Array.from(container.querySelectorAll("a")).map((a) => a.getAttribute("href"));
+    const linkedin =
+      "https://www.linkedin.com/in/amitha-m-v-631162235?utm_source=share_via&utm_content=profile&utm_medium=member_android";
+    expect(hrefs.filter((h) => h === "mailto:amithamv7@gmail.com").length).toBeGreaterThanOrEqual(2);
+    expect(hrefs.filter((h) => h === "tel:+919448512260")).toHaveLength(2);
+    expect(hrefs.filter((h) => h === linkedin)).toHaveLength(2);
+    expect(screen.getAllByText("+91 94485 12260")).toHaveLength(2);
+    expect(screen.getAllByText("amithamv7@gmail.com")).toHaveLength(2);
+    expect(screen.getByRole("heading", { level: 2, name: "Contact" })).toBeTruthy();
+  });
+
   it("offers no résumé download without a real file", () => {
     render(<PortfolioPage />);
     expect(profile.resumeUrl).toBeNull();
