@@ -156,15 +156,21 @@ export function PortfolioPage() {
                 <div aria-hidden className="absolute bottom-7 left-1/2 h-[78%] w-[82%] -translate-x-1/2 rotate-[-7deg] rounded-[2.5rem] border-2 border-foreground bg-pop-pink shadow-pop-lg md:bottom-9" />
                 <div aria-hidden className="absolute bottom-3 left-1/2 h-[76%] w-[82%] -translate-x-1/2 rotate-[5deg] rounded-[2.5rem] border-2 border-foreground bg-pop-sky md:bottom-5" />
                 <div className="absolute inset-[14px] rounded-[2.25rem] border-2 border-foreground bg-pop-lime/80">
-                  <div className="absolute inset-0 overflow-hidden rounded-[2.1rem]">
+                  {/* Inside the innermost yellow card */}
+                  <div className="relative w-full h-full overflow-hidden flex justify-center">
                     <img
                       src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
-                      alt="Portrait of Amitha M V"
-                      width={900}
-                      height={1200}
-                      decoding="async"
-                      className="absolute left-1/2 top-3 z-10 h-[135%] w-auto max-w-none -translate-x-1/2 object-contain object-top drop-shadow-[0_12px_12px_rgba(0,0,0,0.18)]"
-                      fetchPriority="high"
+                      alt="Amitha M V"
+                      style={{
+                        position: 'absolute',
+                        top: '16px',
+                        height: '145%',
+                        width: 'auto',
+                        maxWidth: 'none',
+                        maxHeight: 'none',
+                        objectFit: 'cover',
+                        objectPosition: 'top'
+                      }}
                     />
                   </div>
                 </div>
