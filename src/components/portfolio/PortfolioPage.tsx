@@ -147,20 +147,24 @@ export function PortfolioPage() {
               </div>
             </div>
 
-            {/* Recruiter quick card */}
+            {/* Portrait + recruiter quick card */}
             <aside
-              aria-label="Quick contact"
+              aria-label="Portrait and quick contact"
               className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
             >
-              <div className="relative rounded-[1.5rem] border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
-                <div className="mb-5 flex justify-center">
-                  <img
-                    src="https://raw.githubusercontent.com/amithamv7-cpu/amitha-hebbar-portfolio/main/Firefly_RemoveBackground.png"
-                    alt="Amitha M V"
-                    className="h-40 w-40 rounded-full border-2 border-foreground object-cover shadow-pop md:h-48 md:w-48"
-                    fetchPriority="high"
-                  />
-                </div>
+              <div className="relative mx-auto flex min-h-[300px] w-full max-w-[430px] items-end justify-center md:min-h-[420px]">
+                <div aria-hidden className="absolute bottom-5 h-56 w-56 rounded-full border-2 border-dashed border-foreground/30 md:bottom-8 md:h-72 md:w-72" />
+                <img
+                  src="https://raw.githubusercontent.com/amithamv7-cpu/amitha-hebbar-portfolio/main/Firefly_RemoveBackground.png"
+                  alt="Portrait of Amitha M V"
+                  className="relative z-10 h-[300px] w-full object-contain object-bottom drop-shadow-[0_12px_10px_rgba(0,0,0,0.16)] md:h-[420px]"
+                  fetchPriority="high"
+                />
+                <span className="absolute right-2 top-5 z-20 -rotate-6 rounded-full border-2 border-foreground bg-pop-lime px-4 py-2 font-mono text-xs font-bold shadow-pop md:right-0 md:top-8">
+                  HELLO, I’M AMITHA!
+                </span>
+              </div>
+              <div className="relative mt-3 rounded-[1.5rem] border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
                 {current && (
                   <div className="rounded-2xl bg-ink p-4 text-ink-foreground">
                     <p className="eyebrow flex items-center gap-2 text-ink-muted">
