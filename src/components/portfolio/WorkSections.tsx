@@ -18,7 +18,7 @@ export function WorkSections() {
             aria-labelledby={`${section.id}-title`}
             className="reveal scroll-mt-28"
           >
-            <header className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-3 md:mb-10">
+            <header className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-3 border-b-2 border-dashed border-foreground/40 pb-5 md:mb-10">
               <span
                 className={`eyebrow inline-flex h-9 min-w-9 items-center justify-center rounded-full border-2 border-foreground px-2 text-foreground ${accentBg[accent]}`}
                 aria-hidden
