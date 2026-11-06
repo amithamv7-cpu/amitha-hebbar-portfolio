@@ -155,22 +155,22 @@ export function PortfolioPage() {
               <div className="relative mx-auto h-[420px] w-full max-w-[470px] overflow-hidden md:h-[560px]">
                 <div aria-hidden className="absolute bottom-7 left-1/2 h-[78%] w-[82%] -translate-x-1/2 rotate-[-7deg] rounded-[2.5rem] border-2 border-foreground bg-pop-pink shadow-pop-lg md:bottom-9" />
                 <div aria-hidden className="absolute bottom-3 left-1/2 h-[76%] w-[82%] -translate-x-1/2 rotate-[5deg] rounded-[2.5rem] border-2 border-foreground bg-pop-sky md:bottom-5" />
-                <div className="absolute left-1/2 top-1/2 h-[76%] w-[82%] -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-[2.1rem] bg-pop-lime/80 md:rounded-[2.5rem]">
-                  <div className="absolute inset-0 overflow-hidden rounded-[48%_52%_38%_42%]">
+                <div className="absolute inset-[14px] rounded-[2.25rem] border-2 border-foreground bg-pop-lime/80">
+                  <div className="absolute inset-0 overflow-hidden rounded-[2.1rem]">
                     <img
                       src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
                       alt="Portrait of Amitha M V"
                       width={900}
                       height={1200}
                       decoding="async"
-                      className="absolute left-1/2 top-[43%] z-10 h-[257%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-contain object-center drop-shadow-[0_12px_12px_rgba(0,0,0,0.18)]"
+                      className="absolute left-1/2 top-3 z-10 h-[135%] w-auto max-w-none -translate-x-1/2 object-contain object-top drop-shadow-[0_12px_12px_rgba(0,0,0,0.18)]"
                       fetchPriority="high"
                     />
                   </div>
-                  <span className="absolute bottom-5 left-1/2 z-30 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-2.5 py-2 font-mono text-[10px] font-bold tracking-[0.12em] shadow-pop sm:px-4 sm:text-[11px] sm:tracking-[0.16em] md:bottom-7">
-                    WORDS • STORIES • IDEAS
-                  </span>
                 </div>
+                <span className="absolute bottom-[30px] left-1/2 z-30 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-2.5 py-2 font-mono text-[10px] font-bold tracking-[0.12em] shadow-pop sm:px-4 sm:text-[11px] sm:tracking-[0.16em] md:bottom-[38px]">
+                  WORDS • STORIES • IDEAS
+                </span>
                 <span aria-hidden className="absolute left-2 top-8 z-20 rotate-[-12deg] font-display text-4xl text-primary md:left-0 md:top-12 md:text-5xl">✳</span>
                 <span aria-hidden className="absolute right-4 top-24 z-20 rotate-12 font-display text-3xl text-foreground md:right-2 md:top-28 md:text-4xl">✦</span>
                 <span className="absolute right-0 top-3 z-20 rotate-6 rounded-full border-2 border-foreground bg-pop-orange px-3 py-2 font-mono text-xs font-bold shadow-pop md:right-1 md:top-5">
