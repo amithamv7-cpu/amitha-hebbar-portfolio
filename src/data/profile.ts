@@ -70,5 +70,5 @@ export const profile = {
       "https://www.linkedin.com/in/amitha-m-v-631162235?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   /** Set to a real uploaded file URL to show a download button. */
-  resumeUrl: null as string | null,
+  resumeUrl: "/Amitha_M_V_Resume-1.pdf" as string | null,
 };
