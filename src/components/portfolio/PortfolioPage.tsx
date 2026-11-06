@@ -15,6 +15,7 @@ const current = profile.experience.find((e) => e.end === "Present");
 const navItems = [
   ...(profile.summary ? [{ id: "summary", title: "Summary" }] : []),
   ...(profile.skills.length ? [{ id: "skills", title: "Skills" }] : []),
+  { id: "what-i-do", title: "What I do" },
   { id: "experience", title: "Experience" },
   { id: "education", title: "Education" },
   { id: "selected-work", title: "Work" },
@@ -206,6 +207,30 @@ export function PortfolioPage() {
             )}
           </div>
         </div>
+
+        <section id="what-i-do" aria-labelledby="what-i-do-title" className="mx-auto max-w-7xl scroll-mt-24 px-4 pt-20 md:px-10 md:pt-28">
+          <p className="eyebrow text-muted-foreground">A little bit of everything</p>
+          <h2 id="what-i-do-title" className="mt-3 font-display-tight text-[clamp(3.25rem,10vw,7rem)] text-foreground">What I <span className="marker">do</span></h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">Words, languages, stories and smart tools — I bring ideas to life across formats and platforms.</p>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["01", "Create content", "Create engaging content for digital platforms, social media and editorial needs."],
+              ["02", "Write scripts & copy", "Write scripts, captions, campaign copy and clear, audience-first brand communication."],
+              ["03", "Translate Kannada & English", "Translate and localize content between Kannada and English while keeping meaning, tone and context intact."],
+              ["04", "Transcription", "Turn audio and video into accurate, readable transcripts, with careful editing and cleanup."],
+              ["05", "Edit videos", "Shape raw footage into polished, engaging videos for reels and other digital formats."],
+              ["06", "Make things happen with AI", "Use AI tools for ideation, content creation, language tasks, editing and smarter workflows."],
+            ].map(([number, title, description], index) => (
+              <article key={number} className="rounded-2xl border-2 border-foreground bg-card p-5 shadow-pop transition duration-200 hover:-translate-y-1 hover:shadow-pop-lg md:p-6">
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl border-2 border-foreground ${["bg-pop-lime", "bg-pop-pink", "bg-pop-sky", "bg-pop-orange", "bg-pop-pink", "bg-pop-lime"][index]}`} aria-hidden>
+                  <span className="font-mono text-sm font-bold">{number}</span>
+                </div>
+                <h3 className="mt-6 font-display text-xl font-bold tracking-tight text-foreground md:text-2xl">{title}</h3>
+                <p className="mt-2 leading-relaxed text-muted-foreground">{description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <div className="mx-auto max-w-7xl px-4 pt-20 md:px-10 md:pt-28">
           <ResumeSections />
