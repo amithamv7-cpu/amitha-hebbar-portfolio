@@ -152,33 +152,39 @@ export function PortfolioPage() {
               aria-label="Portrait and quick contact"
               className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
             >
-              <div className="relative mx-auto h-[420px] w-full max-w-[470px] overflow-hidden md:h-[560px]">
+              <div className="relative mx-auto h-[420px] w-full max-w-[470px] md:h-[560px]">
+                {/* Tilted pink backing card */}
                 <div
                   aria-hidden
-                  className="absolute inset-[10px] rounded-[2.5rem] border-2 border-foreground bg-[radial-gradient(circle_at_25%_20%,#fff1df_0%,transparent_38%),linear-gradient(145deg,#d9c7ff_0%,#f7c9d8_52%,#ffd9b8_100%)] shadow-pop-lg"
+                  className="absolute inset-[10px] rotate-[-6deg] rounded-[2.5rem] border-[3px] border-foreground bg-pop-pink shadow-pop-lg"
                 />
-                <div
-                  aria-hidden
-                  className="absolute inset-[10px] rounded-[2.5rem] opacity-30"
-                  style={{ backgroundImage: "radial-gradient(#49365f 1px, transparent 1px)", backgroundSize: "18px 18px" }}
-                />
-                <div className="absolute inset-[18px] overflow-hidden rounded-[2rem]">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
-                    alt="Amitha M V"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                    className="absolute inset-x-0 bottom-0 mx-auto h-full w-full object-contain object-bottom"
-                  />
+
+                {/* Main Neo-Brutalist foreground card */}
+                <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] border-[3px] border-foreground bg-purple-700 shadow-[9px_9px_0px_#000]">
+                  {/* Yellow photo panel owns the crop */}
+                  <div className="absolute inset-[14px] overflow-hidden rounded-[1.9rem] border-2 border-foreground bg-yellow-300">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
+                      alt="Amitha M V"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      className="absolute left-1/2 top-0 h-[140%] w-auto max-w-none -translate-x-1/2 object-contain object-top"
+                      style={{ transform: "translateX(-50%) scale(1.57)", transformOrigin: "top center" }}
+                    />
+                  </div>
                 </div>
-                <span className="absolute bottom-[30px] left-1/2 z-30 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-2.5 py-2 font-mono text-[10px] font-bold tracking-[0.12em] shadow-pop sm:px-4 sm:text-[11px] sm:tracking-[0.16em] md:bottom-[38px]">
-                  WORDS • STORIES • IDEAS
-                </span>
+
+                {/* Decorative accents stay above the card */}
                 <span aria-hidden className="absolute left-2 top-8 z-20 rotate-[-12deg] font-display text-4xl text-primary md:left-0 md:top-12 md:text-5xl">✳</span>
                 <span aria-hidden className="absolute right-4 top-24 z-20 rotate-12 font-display text-3xl text-foreground md:right-2 md:top-28 md:text-4xl">✦</span>
                 <span className="absolute right-0 top-3 z-20 rotate-6 rounded-full border-2 border-foreground bg-pop-orange px-3 py-2 font-mono text-xs font-bold shadow-pop md:right-1 md:top-5">
                   THAT’S ME!
+                </span>
+
+                {/* Floating badge is outside the clipped photo panel */}
+                <span className="absolute bottom-[30px] left-1/2 z-30 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-[3px] border-foreground bg-yellow-300 px-2.5 py-2 font-mono text-[10px] font-bold tracking-[0.12em] text-foreground shadow-[4px_4px_0px_#000] sm:px-4 sm:text-[11px] sm:tracking-[0.16em] md:bottom-[38px]">
+                  WORDS • STORIES • IDEAS
                 </span>
               </div>
               <div className="relative mt-5 rounded-[1.5rem] border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
