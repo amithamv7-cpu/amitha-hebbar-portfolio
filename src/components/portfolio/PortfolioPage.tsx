@@ -155,7 +155,7 @@ export function PortfolioPage() {
               <div className="relative rounded-[1.5rem] border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
                 <div className="mb-5 flex justify-center">
                   <img
-                    src="/IMG_20260718_212118.jpg"
+                    src="https://raw.githubusercontent.com/amithamv7-cpu/amitha-hebbar-portfolio/main/Firefly_RemoveBackground.png"
                     alt="Amitha M V"
                     className="h-40 w-40 rounded-full border-2 border-foreground object-cover shadow-pop md:h-48 md:w-48"
                     fetchPriority="high"
