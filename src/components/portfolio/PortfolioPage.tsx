@@ -164,7 +164,7 @@ export function PortfolioPage() {
                   width={900}
                   height={1200}
                   decoding="async"
-                  className="relative z-10 h-[330px] w-full scale-105 object-contain object-bottom drop-shadow-[0_16px_14px_rgba(0,0,0,0.2)] md:h-[490px] md:scale-110"
+                  className="relative z-10 h-[330px] w-full scale-110 object-cover object-[center_18%] drop-shadow-[0_16px_14px_rgba(0,0,0,0.2)] md:h-[490px] md:scale-110"
                   fetchPriority="high"
                 />
                 <span className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-4 py-2 font-mono text-[11px] font-bold tracking-[0.16em] shadow-pop md:bottom-7">
