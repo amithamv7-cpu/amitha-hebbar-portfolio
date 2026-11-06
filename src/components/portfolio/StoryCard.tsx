@@ -13,7 +13,7 @@ export function StoryCard({ item, accent = "pink" }: { item: PortfolioLink; acce
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${item.title} on ${platform} (opens in a new tab)`}
-      className="group flex h-full flex-col justify-between gap-6 rounded-2xl border-2 border-foreground bg-card p-4 shadow-pop transition duration-300 ease-out hover:-translate-y-1 hover:shadow-pop-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40 md:p-5"
+      className="group flex h-full flex-col justify-between gap-6 rounded-[1.15rem] border-2 border-foreground bg-card p-4 shadow-pop transition duration-300 ease-out hover:-translate-y-1 hover:shadow-pop-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40 md:p-5"
     >
       <span className="flex items-center justify-between gap-2">
         <span
@@ -27,7 +27,7 @@ export function StoryCard({ item, accent = "pink" }: { item: PortfolioLink; acce
         <span className="block font-display-tight text-3xl text-card-foreground md:text-4xl">
           {item.title}
         </span>
-        <span className="mt-3 flex items-center justify-between gap-2 border-t-2 border-dashed border-border pt-3">
+        <span className="mt-3 flex items-center justify-between gap-2 border-t-2 border-dashed border-foreground/40 pt-3">
           <span className="truncate font-mono text-xs text-muted-foreground">
             {displayHost(item.url)}
           </span>
