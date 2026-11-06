@@ -1,13 +1,28 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import {
-  AnalyticsPanel,
-  CONNECT_MESSAGE,
-  EXTERNAL_UNAVAILABLE,
-} from "@/components/portfolio/AnalyticsPanel";
+import { PortfolioPage } from "@/components/portfolio/PortfolioPage";
 import { WorkSections } from "@/components/portfolio/WorkSections";
 import { allLinks, featuredLinks, NAMMURA_EPISODE_578_URL, sections } from "@/data/portfolio";
+
+// The nine Facebook videos that replaced the old Digital Stories links, in order.
+const DIGITAL_STORY_URLS = [
+  "https://fb.watch/KIkiHhOvle/",
+  "https://www.facebook.com/share/v/1EZRLudx7N/",
+  "https://www.facebook.com/share/v/1ECm5tqR5k/",
+  "https://www.facebook.com/share/v/1A9gnZq6sq/",
+  "https://www.facebook.com/DeptofJournalism/videos/2240589502953516/?mibextid=Nif5oz",
+  "https://www.facebook.com/share/v/19hszTYhkS/",
+  "https://www.facebook.com/share/v/1CwnPKLwiC/",
+  "https://www.facebook.com/share/v/1HBgB8owEC/",
+  "https://www.facebook.com/share/v/1KYwVGEZ7u/",
+];
+
+const PRATILIPI_URLS = [
+  "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7",
+  "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6",
+  "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA",
+];
 
 // Exactly the URLs Amitha supplied, with the episode 578 correction applied.
 const EXPECTED_URLS = [
@@ -33,12 +48,7 @@ const EXPECTED_URLS = [
   "https://youtu.be/CrZfmnJirWU",
   "https://youtu.be/QMNNmhGcXoo",
   "https://youtu.be/JRpUZ5Xl2oM",
-  "https://www.facebook.com/share/v/EnbQRuFxLWEpYoMQ/?mibextid=jmPrMh",
-  "https://www.facebook.com/share/v/yzgwtAdYV4SuBNdn/?mibextid=jmPrMh",
-  "https://www.facebook.com/share/v/d4kmBuJbSsuL6xLP/?mibextid=jmPrMh",
-  "https://www.facebook.com/share/v/dLoGQuJyYwfaqEJF/?mibextid=jmPrMh",
-  "https://www.facebook.com/share/v/GJh68gebtTouKEAW/?mibextid=jmPrMh",
-  "https://m.facebook.com/story.php?story_fbid=759351612682927&id=100069562481080&sfnsn=wiwspwa&mibextid=2Rb1fB",
+  ...DIGITAL_STORY_URLS,
   "https://drive.google.com/drive/folders/1OFrkeM8KSTdAPCRE69Oklh_7suOb2Jvl",
   "https://youtu.be/SoOJYofhu64?si=lVkpn7r3C2YXVr4o",
   "https://youtu.be/MA9PamJFjB4?si=ZUdHcKR6lRVOE68N",
@@ -66,16 +76,34 @@ describe("portfolio links", () => {
     ]);
   });
 
-  it("groups every Pratilipi link under one section titled Pratilipi", () => {
+  it("puts all three Pratilipi links in one section titled Pratilipi Writing", () => {
     const withPratilipi = sections.filter((s) =>
       s.groups.some((g) => g.items.some((i) => i.url.includes("pratilipi"))),
     );
-    expect(withPratilipi.map((s) => s.title)).toEqual(["Pratilipi"]);
-    expect(withPratilipi[0]!.groups.flatMap((g) => g.items.map((i) => i.url))).toEqual([
-      "https://pratilipi.page.link/VK1H9o4vwCNr8eAP7",
-      "https://pratilipi.page.link/vLBcwLJ7gXavpb5X6",
-      "https://pratilipi.page.link/uo5j6Q9AU1ZZJPGKA",
+    expect(withPratilipi.map((s) => s.title)).toEqual(["Pratilipi Writing"]);
+    const section = withPratilipi[0]!;
+    expect(section.groups.map((g) => [g.label, g.items.map((i) => `${i.title}: ${i.url}`)])).toEqual([
+      ["Profile", [`Pratilipi profile: ${PRATILIPI_URLS[0]}`]],
+      ["Works", [`Work 1: ${PRATILIPI_URLS[1]}`, `Work 2: ${PRATILIPI_URLS[2]}`]],
     ]);
+    // No duplicates anywhere else on the page.
+    expect(allLinks().filter((l) => l.url.includes("pratilipi")).map((l) => l.url)).toEqual(
+      PRATILIPI_URLS,
+    );
+  });
+
+  it("Digital Stories holds exactly the nine new Facebook videos, labelled Story 01-09", () => {
+    const stories = sections.find((s) => s.id === "digital-stories")!;
+    expect(stories.title).toBe("Digital Stories");
+    const items = stories.groups.flatMap((g) => g.items);
+    expect(items.map((i) => i.url)).toEqual(DIGITAL_STORY_URLS);
+    expect(items.map((i) => i.title)).toEqual([
+      "Story 01", "Story 02", "Story 03", "Story 04", "Story 05",
+      "Story 06", "Story 07", "Story 08", "Story 09",
+    ]);
+    // Old digital story links are gone.
+    expect(allLinks().some((l) => l.url.includes("EnbQRuFxLWEpYoMQ"))).toBe(false);
+    expect(allLinks().some((l) => l.url.includes("story_fbid=759351612682927"))).toBe(false);
   });
 
   it("has no practice journals section", () => {
@@ -92,12 +120,10 @@ describe("portfolio links", () => {
     }
   });
 
-  it("shows no view numbers in analytics until a source is connected", () => {
-    render(<AnalyticsPanel />);
-    // One message for website visitors + one per external source group.
-    expect(screen.getAllByText(CONNECT_MESSAGE)).toHaveLength(4);
-    // Every external source (YouTube, Meta, others) is marked unavailable.
-    expect(screen.getAllByText(new RegExp(EXTERNAL_UNAVAILABLE))).toHaveLength(3);
-    expect(screen.queryByText(/\b\d[\d,.]*\s*(views|visitors)\b/i)).toBeNull();
+  it("has no analytics section and shows no view or visitor numbers", () => {
+    const { container } = render(<PortfolioPage />);
+    expect(container.querySelector("#analytics")).toBeNull();
+    expect(screen.queryByRole("heading", { name: /analytics/i })).toBeNull();
+    expect(container.textContent).not.toMatch(/\b\d[\d,.]*\s*(views|visitors)\b/i);
   });
 });
