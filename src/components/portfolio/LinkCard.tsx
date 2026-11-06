@@ -24,7 +24,8 @@ export function LinkCard({ item, index, total, accent = "lime", withMedia = fals
   const ytId = youTubeId(item.url);
   const handle = instagramHandle(item.url);
   const number = String(index + 1).padStart(2, "0");
-  const showNumber = total > 1;
+  // Skip "No. 01" when the owner's label already carries a number (e.g. "Work 1").
+  const showNumber = total > 1 && !/\d$/.test(item.title);
   const subtitle = item.tag ?? handle;
 
   return (

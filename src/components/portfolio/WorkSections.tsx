@@ -2,6 +2,7 @@ import { sectionCount, sections, youTubeId } from "@/data/portfolio";
 
 import { accentBg, accentFor } from "./accents";
 import { LinkCard } from "./LinkCard";
+import { StoryCard } from "./StoryCard";
 
 export function WorkSections() {
   return (
@@ -9,6 +10,7 @@ export function WorkSections() {
       {sections.map((section, sIndex) => {
         const accent = accentFor(section.id);
         const count = sectionCount(section);
+        const compact = section.id === "digital-stories";
         return (
           <section
             key={section.id}
@@ -44,19 +46,29 @@ export function WorkSections() {
                       <span className="eyebrow text-muted-foreground">{group.items.length}</span>
                     </h4>
                   )}
-                  <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {group.items.map((item, i) => (
-                      <li key={item.url}>
-                        <LinkCard
-                          item={item}
-                          index={i}
-                          total={group.items.length}
-                          accent={accent}
-                          withMedia={group.items.some((g) => youTubeId(g.url))}
-                        />
-                      </li>
-                    ))}
-                  </ul>
+                  {compact ? (
+                    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">
+                      {group.items.map((item) => (
+                        <li key={item.url}>
+                          <StoryCard item={item} accent={accent} />
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                      {group.items.map((item, i) => (
+                        <li key={item.url}>
+                          <LinkCard
+                            item={item}
+                            index={i}
+                            total={group.items.length}
+                            accent={accent}
+                            withMedia={group.items.some((g) => youTubeId(g.url))}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>
