@@ -153,6 +153,14 @@ export function PortfolioPage() {
               className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
             >
               <div className="relative rounded-[1.5rem] border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
+                <div className="mb-5 flex justify-center">
+                  <img
+                    src="/IMG_20260718_212118.jpg"
+                    alt="Amitha M V"
+                    className="h-40 w-40 rounded-full border-2 border-foreground object-cover shadow-pop md:h-48 md:w-48"
+                    fetchPriority="high"
+                  />
+                </div>
                 {current && (
                   <div className="rounded-2xl bg-ink p-4 text-ink-foreground">
                     <p className="eyebrow flex items-center gap-2 text-ink-muted">
