@@ -169,7 +169,7 @@ export function PortfolioPage() {
                       loading="eager"
                       fetchPriority="high"
                       decoding="async"
-                      className="absolute left-1/2 top-[14px] h-[125%] w-auto max-w-none -translate-x-1/2 object-none object-top"
+                      className="absolute inset-0 h-full w-full scale-[1.12] object-cover object-[center_18%]"
                     />
                   </div>
 
