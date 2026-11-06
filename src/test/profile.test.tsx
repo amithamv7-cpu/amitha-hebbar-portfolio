@@ -27,14 +27,38 @@ describe("profile content", () => {
     ).toBeTruthy();
   });
 
-  it("lists experience with the supplied dates, newest first", () => {
-    expect(profile.experience.map((e) => `${e.organization}: ${e.start} – ${e.end}`)).toEqual([
-      "Wadhwani Foundation: Aug 2026 – Present",
-      "Kavi Research: Aug 2025 – Jul 2026",
-      "Ola Krutrim: Mar 2025 – Aug 2025",
-      "Vijayavani: Jun 2024 – Feb 2025",
-      "Digital Pitaa: Jul 2021 – Dec 2021",
+  it("lists the four supplied experience records with exact titles and dates, newest first", () => {
+    expect(profile.experience).toEqual([
+      {
+        organization: "Wadhwani Foundation",
+        role: "Content Localization Expert (Kannada)",
+        start: "August 2026",
+        end: "October 2026",
+      },
+      {
+        organization: "KAVI Research",
+        role: "Content Editor (English)",
+        start: "August 2025",
+        end: "July 2026",
+      },
+      {
+        organization: "Krutrim",
+        role: "Kannada Linguist",
+        start: "March 2025",
+        end: "July 2025",
+      },
+      {
+        organization: "Vijayavani",
+        role: "Sub Editor",
+        start: "July 2024",
+        end: "February 2025",
+      },
     ]);
+  });
+
+  it("does not show unsupported or outdated experience details", () => {
+    const { container } = render(<PortfolioPage />);
+    expect(container.textContent).not.toMatch(/researcher|Present|Ola Krutrim|Digital Pitaa/i);
   });
 
   it("lists education and certification as supplied", () => {
