@@ -249,4 +249,15 @@
     animation-range: entry 0% entry 40%;
   }
 }
-\n\n@utility paper-grain {\n  background-image: radial-gradient(oklch(0.22 0.025 55 / 5%) 0.7px, transparent 0.7px);\n  background-size: 6px 6px;\n}\n\n@utility doodle-note {\n  border: 2px dashed currentColor;\n  border-radius: 1rem 1.35rem 1rem 1.2rem;\n  transform: rotate(-2deg);\n}\n
+
+
+@utility paper-grain {
+  background-image: radial-gradient(oklch(0.22 0.025 55 / 5%) 0.7px, transparent 0.7px);
+  background-size: 6px 6px;
+}
+
+@utility doodle-note {
+  border: 2px dashed currentColor;
+  border-radius: 1rem 1.35rem 1rem 1.2rem;
+  transform: rotate(-2deg);
+}
