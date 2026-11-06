@@ -1,6 +1,6 @@
 // Professional content for the résumé sections.
 // Only facts supplied by Amitha go here — copy résumé wording exactly; never embellish.
-// Summary, skills, role titles and highlights stay empty until taken from the résumé file.
+// Summary, skills and highlights stay empty until the user supplies verified wording.
 
 export type Experience = {
   organization: string;
@@ -28,11 +28,30 @@ export const profile = {
   summary: null as string | null,
   skills: [] as string[],
   experience: [
-    { organization: "Wadhwani Foundation", start: "Aug 2026", end: "Present" },
-    { organization: "Kavi Research", start: "Aug 2025", end: "Jul 2026" },
-    { organization: "Ola Krutrim", start: "Mar 2025", end: "Aug 2025" },
-    { organization: "Vijayavani", start: "Jun 2024", end: "Feb 2025" },
-    { organization: "Digital Pitaa", start: "Jul 2021", end: "Dec 2021" },
+    {
+      organization: "Wadhwani Foundation",
+      role: "Content Localization Expert (Kannada)",
+      start: "August 2026",
+      end: "October 2026",
+    },
+    {
+      organization: "KAVI Research",
+      role: "Content Editor (English)",
+      start: "August 2025",
+      end: "July 2026",
+    },
+    {
+      organization: "Krutrim",
+      role: "Kannada Linguist",
+      start: "March 2025",
+      end: "July 2025",
+    },
+    {
+      organization: "Vijayavani",
+      role: "Sub Editor",
+      start: "July 2024",
+      end: "February 2025",
+    },
   ] as Experience[],
   education: [
     {
