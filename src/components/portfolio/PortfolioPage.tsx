@@ -162,7 +162,7 @@ export function PortfolioPage() {
                     width={900}
                     height={1200}
                     decoding="async"
-                    className="absolute left-1/2 top-0 z-10 h-[145%] w-auto max-w-none -translate-x-1/2 object-contain object-top drop-shadow-[0_12px_12px_rgba(0,0,0,0.18)]"
+                    className="absolute left-1/2 top-1/2 z-10 h-[175%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-contain object-center drop-shadow-[0_12px_12px_rgba(0,0,0,0.18)]"
                     fetchPriority="high"
                   />
                   <span className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-4 py-2 font-mono text-[11px] font-bold tracking-[0.16em] shadow-pop md:bottom-5">
