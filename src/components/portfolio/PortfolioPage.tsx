@@ -153,26 +153,24 @@ export function PortfolioPage() {
               className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
             >
               <div className="relative mx-auto h-[420px] w-full max-w-[470px] overflow-hidden md:h-[560px]">
-                <div aria-hidden className="absolute bottom-7 left-1/2 h-[78%] w-[82%] -translate-x-1/2 rotate-[-7deg] rounded-[2.5rem] border-2 border-foreground bg-pop-pink shadow-pop-lg md:bottom-9" />
-                <div aria-hidden className="absolute bottom-3 left-1/2 h-[76%] w-[82%] -translate-x-1/2 rotate-[5deg] rounded-[2.5rem] border-2 border-foreground bg-pop-sky md:bottom-5" />
-                <div className="absolute inset-[14px] overflow-hidden rounded-[2.25rem] border-2 border-foreground bg-pop-lime/80">
-                  {/* Inside the innermost yellow card */}
-                  <div className="relative w-full h-full overflow-hidden flex justify-center">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
-                      alt="Amitha M V"
-                      style={{
-                        position: 'absolute',
-                        top: '16px',
-                        height: '145%',
-                        width: 'auto',
-                        maxWidth: 'none',
-                        maxHeight: 'none',
-                        objectFit: 'cover',
-                        objectPosition: 'top'
-                      }}
-                    />
-                  </div>
+                <div
+                  aria-hidden
+                  className="absolute inset-[10px] rounded-[2.5rem] border-2 border-foreground bg-[radial-gradient(circle_at_25%_20%,#fff1df_0%,transparent_38%),linear-gradient(145deg,#d9c7ff_0%,#f7c9d8_52%,#ffd9b8_100%)] shadow-pop-lg"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-[10px] rounded-[2.5rem] opacity-30"
+                  style={{ backgroundImage: "radial-gradient(#49365f 1px, transparent 1px)", backgroundSize: "18px 18px" }}
+                />
+                <div className="absolute inset-[18px] overflow-hidden rounded-[2rem]">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
+                    alt="Amitha M V"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="absolute inset-x-0 bottom-0 mx-auto h-full w-full object-contain object-bottom"
+                  />
                 </div>
                 <span className="absolute bottom-[30px] left-1/2 z-30 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-2.5 py-2 font-mono text-[10px] font-bold tracking-[0.12em] shadow-pop sm:px-4 sm:text-[11px] sm:tracking-[0.16em] md:bottom-[38px]">
                   WORDS • STORIES • IDEAS
