@@ -89,7 +89,7 @@ export const sections: PortfolioSection[] = [
             url: "https://www.instagram.com/savage_sundris?igsh=MXR5amQ4dXk5eTZhZA==",
           },
           {
-            title: "Additional Instagram",
+            title: "Instagram",
             url: "https://www.instagram.com/amitha_uvaacha?rpxt=cDc5MGxsOXpwdG5y",
             featured: true,
           },
