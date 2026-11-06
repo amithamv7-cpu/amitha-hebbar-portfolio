@@ -152,7 +152,7 @@ export function PortfolioPage() {
               aria-label="Portrait and quick contact"
               className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
             >
-              <div className="relative mx-auto flex min-h-[340px] w-full max-w-[470px] items-end justify-center md:min-h-[500px]">
+              <div className="relative mx-auto flex min-h-[340px] w-full max-w-[470px] items-start justify-center overflow-hidden md:min-h-[500px]">
                 <div aria-hidden className="absolute bottom-7 h-[78%] w-[82%] rotate-[-7deg] rounded-[2.5rem] border-2 border-foreground bg-pop-pink shadow-pop-lg md:bottom-9" />
                 <div aria-hidden className="absolute bottom-3 h-[76%] w-[82%] rotate-[5deg] rounded-[2.5rem] border-2 border-foreground bg-pop-sky md:bottom-5" />
                 <div aria-hidden className="absolute bottom-8 h-[72%] w-[76%] rounded-[48%_52%_38%_42%] bg-pop-lime/80 md:bottom-10" />
@@ -164,7 +164,7 @@ export function PortfolioPage() {
                   width={900}
                   height={1200}
                   decoding="async"
-                  className="relative z-10 h-[330px] w-full scale-110 object-cover object-[center_18%] drop-shadow-[0_16px_14px_rgba(0,0,0,0.2)] md:h-[490px] md:scale-110"
+                  className="absolute left-1/2 top-0 z-10 h-[125%] w-auto max-w-none -translate-x-1/2 object-contain object-top drop-shadow-[0_16px_14px_rgba(0,0,0,0.2)]"
                   fetchPriority="high"
                 />
                 <span className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-4 py-2 font-mono text-[11px] font-bold tracking-[0.16em] shadow-pop md:bottom-7">
