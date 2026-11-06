@@ -159,7 +159,7 @@ export function PortfolioPage() {
                 <span aria-hidden className="absolute left-2 top-8 z-20 rotate-[-12deg] font-display text-4xl text-primary md:left-0 md:top-12 md:text-5xl">✳</span>
                 <span aria-hidden className="absolute right-4 top-24 z-20 rotate-12 font-display text-3xl text-foreground md:right-2 md:top-28 md:text-4xl">✦</span>
                 <img
-                  src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/Firefly_RemoveBackground.png"
+                  src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
                   alt="Portrait of Amitha M V"
                   width={900}
                   height={1200}
