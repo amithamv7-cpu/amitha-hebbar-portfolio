@@ -171,6 +171,12 @@ export function PortfolioPage() {
                       decoding="async"
                       className="absolute inset-0 h-full w-full scale-[1.12] object-cover object-[center_18%]"
                     />
+                    {/* Tiny book stack fills the quiet corner of the photo panel */}
+                    <div aria-hidden className="absolute bottom-4 right-3 z-10 flex w-[104px] flex-col items-end drop-shadow-[3px_3px_0px_rgba(0,0,0,0.35)] sm:bottom-5 sm:right-5">
+                      <div className="flex h-5 w-[82px] items-center justify-center rounded-r-sm border-2 border-black bg-[#F9C5D5] text-[7px] font-black tracking-[0.16em] text-black shadow-[inset_5px_0_0_#D9799B]">POETRY</div>
+                      <div className="-mt-0.5 flex h-5 w-[96px] items-center justify-center rounded-r-sm border-2 border-black bg-[#D4C7F9] text-[7px] font-black tracking-[0.16em] text-black shadow-[inset_6px_0_0_#8B72C8]">STORIES</div>
+                      <div className="-mt-0.5 flex h-5 w-[88px] items-center justify-center rounded-r-sm border-2 border-black bg-[#F4D36B] text-[7px] font-black tracking-[0.16em] text-black shadow-[inset_6px_0_0_#C79B28]">IDEAS</div>
+                    </div>
                   </div>
 
                   {/* Badge sits above the image and outside its clipping boundary */}
