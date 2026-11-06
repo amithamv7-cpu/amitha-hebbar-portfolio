@@ -35,7 +35,7 @@ export function LinkCard({ item, index, total, accent = "lime", withMedia = fals
       rel="noopener noreferrer"
       data-featured={item.featured ? "true" : undefined}
       aria-label={`${item.title}${subtitle ? ` — ${subtitle}` : ""}${showNumber ? `, number ${number}` : ""} on ${platform} (opens in a new tab)`}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border-2 border-foreground bg-card shadow-pop transition duration-300 ease-out hover:-translate-x-0.5 hover:-translate-y-1 hover:shadow-pop-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40 ${
+      className={`group relative flex h-full flex-col overflow-hidden rounded-[1.15rem] border-2 border-foreground bg-card shadow-pop transition duration-300 ease-out hover:-translate-x-0.5 hover:-translate-y-1 hover:shadow-pop-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/40 ${
         item.featured ? "ring-4 ring-accent" : ""
       }`}
     >
@@ -88,7 +88,7 @@ export function LinkCard({ item, index, total, accent = "lime", withMedia = fals
           )}
         </div>
 
-        <div className="flex items-center justify-between gap-3 border-t-2 border-dashed border-border pt-4">
+        <div className="flex items-center justify-between gap-3 border-t-2 border-dashed border-foreground/40 pt-4">
           <span className="truncate font-mono text-xs text-muted-foreground">
             {displayHost(item.url)}
           </span>
