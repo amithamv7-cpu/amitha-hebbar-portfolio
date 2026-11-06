@@ -147,24 +147,31 @@ export function PortfolioPage() {
               </div>
             </div>
 
-            {/* Portrait + recruiter quick card */}
+            {/* Editorial cutout portrait + quick contact */}
             <aside
               aria-label="Portrait and quick contact"
               className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
             >
-              <div className="relative mx-auto flex min-h-[300px] w-full max-w-[430px] items-end justify-center md:min-h-[420px]">
-                <div aria-hidden className="absolute bottom-5 h-56 w-56 rounded-full border-2 border-dashed border-foreground/30 md:bottom-8 md:h-72 md:w-72" />
+              <div className="relative mx-auto flex min-h-[340px] w-full max-w-[470px] items-end justify-center md:min-h-[500px]">
+                <div aria-hidden className="absolute bottom-7 h-[78%] w-[82%] rotate-[-7deg] rounded-[2.5rem] border-2 border-foreground bg-pop-pink shadow-pop-lg md:bottom-9" />
+                <div aria-hidden className="absolute bottom-3 h-[76%] w-[82%] rotate-[5deg] rounded-[2.5rem] border-2 border-foreground bg-pop-sky md:bottom-5" />
+                <div aria-hidden className="absolute bottom-8 h-[72%] w-[76%] rounded-[48%_52%_38%_42%] bg-pop-lime/80 md:bottom-10" />
+                <span aria-hidden className="absolute left-2 top-8 z-20 rotate-[-12deg] font-display text-4xl text-primary md:left-0 md:top-12 md:text-5xl">✳</span>
+                <span aria-hidden className="absolute right-4 top-24 z-20 rotate-12 font-display text-3xl text-foreground md:right-2 md:top-28 md:text-4xl">✦</span>
                 <img
                   src="https://raw.githubusercontent.com/amithamv7-cpu/amitha-hebbar-portfolio/main/Firefly_RemoveBackground.png"
                   alt="Portrait of Amitha M V"
-                  className="relative z-10 h-[300px] w-full object-contain object-bottom drop-shadow-[0_12px_10px_rgba(0,0,0,0.16)] md:h-[420px]"
+                  className="relative z-10 h-[330px] w-full object-contain object-bottom drop-shadow-[0_16px_14px_rgba(0,0,0,0.2)] md:h-[490px]"
                   fetchPriority="high"
                 />
-                <span className="absolute right-2 top-5 z-20 -rotate-6 rounded-full border-2 border-foreground bg-pop-lime px-4 py-2 font-mono text-xs font-bold shadow-pop md:right-0 md:top-8">
-                  HELLO, I’M AMITHA!
+                <span className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-4 py-2 font-mono text-[11px] font-bold tracking-[0.16em] shadow-pop md:bottom-7">
+                  WORDS • STORIES • IDEAS
+                </span>
+                <span className="absolute right-0 top-3 z-20 rotate-6 rounded-full border-2 border-foreground bg-pop-orange px-3 py-2 font-mono text-xs font-bold shadow-pop md:right-1 md:top-5">
+                  THAT’S ME!
                 </span>
               </div>
-              <div className="relative mt-3 rounded-[1.5rem] border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
+              <div className="relative mt-5 rounded-[1.5rem] border-2 border-foreground bg-card p-5 shadow-pop-lg transition duration-500 md:p-6 lg:rotate-[1.25deg] lg:hover:rotate-0">
                 {current && (
                   <div className="rounded-2xl bg-ink p-4 text-ink-foreground">
                     <p className="eyebrow flex items-center gap-2 text-ink-muted">
