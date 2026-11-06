@@ -152,10 +152,10 @@ export function PortfolioPage() {
               aria-label="Portrait and quick contact"
               className="animate-rise [animation-delay:320ms] lg:col-span-5 lg:pl-6"
             >
-              <div className="relative mx-auto flex min-h-[340px] w-full max-w-[470px] items-start justify-center overflow-hidden md:min-h-[500px]">
-                <div aria-hidden className="absolute bottom-7 h-[78%] w-[82%] rotate-[-7deg] rounded-[2.5rem] border-2 border-foreground bg-pop-pink shadow-pop-lg md:bottom-9" />
-                <div aria-hidden className="absolute bottom-3 h-[76%] w-[82%] rotate-[5deg] rounded-[2.5rem] border-2 border-foreground bg-pop-sky md:bottom-5" />
-                <div aria-hidden className="absolute bottom-8 h-[72%] w-[76%] rounded-[48%_52%_38%_42%] bg-pop-lime/80 md:bottom-10" />
+              <div className="relative mx-auto h-[420px] w-full max-w-[470px] overflow-hidden md:h-[560px]">
+                <div aria-hidden className="absolute bottom-7 left-1/2 h-[78%] w-[82%] -translate-x-1/2 rotate-[-7deg] rounded-[2.5rem] border-2 border-foreground bg-pop-pink shadow-pop-lg md:bottom-9" />
+                <div aria-hidden className="absolute bottom-3 left-1/2 h-[76%] w-[82%] -translate-x-1/2 rotate-[5deg] rounded-[2.5rem] border-2 border-foreground bg-pop-sky md:bottom-5" />
+                <div aria-hidden className="absolute bottom-8 left-1/2 h-[72%] w-[76%] -translate-x-1/2 rounded-[48%_52%_38%_42%] bg-pop-lime/80 md:bottom-10" />
                 <span aria-hidden className="absolute left-2 top-8 z-20 rotate-[-12deg] font-display text-4xl text-primary md:left-0 md:top-12 md:text-5xl">✳</span>
                 <span aria-hidden className="absolute right-4 top-24 z-20 rotate-12 font-display text-3xl text-foreground md:right-2 md:top-28 md:text-4xl">✦</span>
                 <img
@@ -164,7 +164,7 @@ export function PortfolioPage() {
                   width={900}
                   height={1200}
                   decoding="async"
-                  className="absolute left-1/2 top-[-12px] z-10 h-[135%] w-auto max-w-none -translate-x-1/2 object-contain object-top drop-shadow-[0_16px_14px_rgba(0,0,0,0.2)]"
+                  className="absolute bottom-0 left-1/2 z-10 h-[118%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom scale-[1.22] origin-bottom drop-shadow-[0_16px_14px_rgba(0,0,0,0.2)]"
                   fetchPriority="high"
                 />
                 <span className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-4 py-2 font-mono text-[11px] font-bold tracking-[0.16em] shadow-pop md:bottom-7">
