@@ -155,17 +155,19 @@ export function PortfolioPage() {
               <div className="relative mx-auto h-[420px] w-full max-w-[470px] overflow-hidden md:h-[560px]">
                 <div aria-hidden className="absolute bottom-7 left-1/2 h-[78%] w-[82%] -translate-x-1/2 rotate-[-7deg] rounded-[2.5rem] border-2 border-foreground bg-pop-pink shadow-pop-lg md:bottom-9" />
                 <div aria-hidden className="absolute bottom-3 left-1/2 h-[76%] w-[82%] -translate-x-1/2 rotate-[5deg] rounded-[2.5rem] border-2 border-foreground bg-pop-sky md:bottom-5" />
-                <div className="absolute bottom-8 left-1/2 h-[72%] w-[76%] -translate-x-1/2 overflow-hidden rounded-[48%_52%_38%_42%] bg-pop-lime/80 md:bottom-10">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
-                    alt="Portrait of Amitha M V"
-                    width={900}
-                    height={1200}
-                    decoding="async"
-                    className="absolute left-1/2 top-1/2 z-10 h-[175%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-contain object-center drop-shadow-[0_12px_12px_rgba(0,0,0,0.18)]"
-                    fetchPriority="high"
-                  />
-                  <span className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-4 py-2 font-mono text-[11px] font-bold tracking-[0.16em] shadow-pop md:bottom-5">
+                <div className="absolute bottom-8 left-1/2 h-[72%] w-[76%] -translate-x-1/2 overflow-visible rounded-[48%_52%_38%_42%] bg-pop-lime/80 md:bottom-10">
+                  <div className="absolute inset-0 overflow-hidden rounded-[48%_52%_38%_42%]">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
+                      alt="Portrait of Amitha M V"
+                      width={900}
+                      height={1200}
+                      decoding="async"
+                      className="absolute left-1/2 top-1/2 z-10 h-[190%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-contain object-center drop-shadow-[0_12px_12px_rgba(0,0,0,0.18)]"
+                      fetchPriority="high"
+                    />
+                  </div>
+                  <span className="absolute bottom-5 left-1/2 z-30 -translate-x-1/2 rotate-[-3deg] whitespace-nowrap rounded-full border-2 border-foreground bg-card px-2.5 py-2 font-mono text-[10px] font-bold tracking-[0.12em] shadow-pop sm:px-4 sm:text-[11px] sm:tracking-[0.16em] md:bottom-7">
                     WORDS • STORIES • IDEAS
                   </span>
                 </div>
