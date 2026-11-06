@@ -123,7 +123,7 @@ export function ResumeSections() {
           {profile.education.map((ed) => (
             <li
               key={ed.degree}
-              className="flex flex-col rounded-2xl border-2 border-foreground bg-pop-sky p-5 shadow-pop md:p-6"
+              className="flex flex-col rounded-[1.15rem] border-2 border-foreground bg-pop-sky p-5 shadow-pop md:p-6"
             >
               <div className="flex items-center justify-between gap-3">
                 <p className="eyebrow text-foreground">Education</p>
@@ -138,7 +138,7 @@ export function ResumeSections() {
           {profile.certifications.map((c) => (
             <li
               key={c.name}
-              className="flex flex-col rounded-2xl border-2 border-foreground bg-pop-lime p-5 shadow-pop md:p-6"
+              className="flex flex-col rounded-[1.15rem] border-2 border-foreground bg-pop-lime p-5 shadow-pop md:p-6"
             >
               <p className="eyebrow text-foreground">Certification</p>
               <h3 className="mt-6 font-display text-2xl font-bold leading-tight tracking-tight text-foreground">
