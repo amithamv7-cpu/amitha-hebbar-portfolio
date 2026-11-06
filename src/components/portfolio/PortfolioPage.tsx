@@ -156,23 +156,27 @@ export function PortfolioPage() {
                 {/* Tilted pink backing card */}
                 <div
                   aria-hidden
-                  className="absolute inset-[10px] rotate-[-6deg] rounded-[2.5rem] border-[3px] border-foreground bg-pop-pink shadow-pop-lg"
+                  className="absolute inset-0 rotate-[-6deg] rounded-[2.5rem] border-[3px] border-black bg-[#F9C5D5] shadow-[8px_8px_0px_#000]"
                 />
 
-                {/* Main Neo-Brutalist foreground card */}
-                <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] border-[3px] border-foreground bg-purple-700 shadow-[9px_9px_0px_#000]">
-                  {/* Yellow photo panel owns the crop */}
-                  <div className="absolute inset-[14px] overflow-hidden rounded-[1.9rem] border-2 border-foreground bg-yellow-300">
+                {/* Main lavender card; keep overflow visible for the badge */}
+                <div className="absolute inset-0 rounded-[2.5rem] border-[3px] border-black bg-[#D4C7F9] p-3 shadow-[8px_8px_0px_#000]">
+                  {/* Inner yellow panel is the only clipping container */}
+                  <div className="absolute inset-3 overflow-hidden rounded-[2rem] bg-[#E8E3BE]">
                     <img
                       src="https://cdn.jsdelivr.net/gh/amithamv7-cpu/amitha-hebbar-portfolio@main/1000561050.png"
                       alt="Amitha M V"
                       loading="eager"
                       fetchPriority="high"
                       decoding="async"
-                      className="absolute left-1/2 top-0 h-[140%] w-auto max-w-none -translate-x-1/2 object-contain object-top"
-                      style={{ transform: "translateX(-50%) scale(1.57)", transformOrigin: "top center" }}
+                      className="absolute left-1/2 top-[14px] h-[125%] w-auto max-w-none -translate-x-1/2 object-none object-top"
                     />
                   </div>
+
+                  {/* Badge sits above the image and outside its clipping boundary */}
+                  <span className="absolute bottom-[18px] left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full border-2 border-black bg-white px-5 py-2 font-mono text-[10px] font-black tracking-[0.15em] text-black shadow-[3px_3px_0px_#000] sm:text-xs">
+                    WORDS • STORIES • IDEAS
+                  </span>
                 </div>
 
                 {/* Decorative accents stay above the card */}
