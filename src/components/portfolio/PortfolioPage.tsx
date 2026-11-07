@@ -169,7 +169,7 @@ export function PortfolioPage() {
                       loading="eager"
                       fetchPriority="high"
                       decoding="async"
-                      className="absolute inset-0 h-full w-full scale-[1.38] object-cover object-[center_14%]"
+                      className="absolute inset-0 h-full w-full -translate-y-[6%] scale-[1.38] object-cover object-[center_14%]"
                     />
                     {/* Scattered editorial doodles fill the open spaces around the portrait */}
                     <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
