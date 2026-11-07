@@ -171,11 +171,36 @@ export function PortfolioPage() {
                       decoding="async"
                       className="absolute inset-0 h-full w-full scale-[1.12] object-cover object-[center_18%]"
                     />
-                    {/* Tiny book stack fills the quiet corner of the photo panel */}
-                    <div aria-hidden className="absolute bottom-4 right-3 z-10 flex w-[104px] flex-col items-end drop-shadow-[3px_3px_0px_rgba(0,0,0,0.35)] sm:bottom-5 sm:right-5">
-                      <div className="flex h-5 w-[82px] items-center justify-center rounded-r-sm border-2 border-black bg-[#F9C5D5] text-[7px] font-black tracking-[0.16em] text-black shadow-[inset_5px_0_0_#D9799B]">POETRY</div>
-                      <div className="-mt-0.5 flex h-5 w-[96px] items-center justify-center rounded-r-sm border-2 border-black bg-[#D4C7F9] text-[7px] font-black tracking-[0.16em] text-black shadow-[inset_6px_0_0_#8B72C8]">STORIES</div>
-                      <div className="-mt-0.5 flex h-5 w-[88px] items-center justify-center rounded-r-sm border-2 border-black bg-[#F4D36B] text-[7px] font-black tracking-[0.16em] text-black shadow-[inset_6px_0_0_#C79B28]">IDEAS</div>
+                    {/* Scattered book details sit behind the transparent portrait, filling the yellow panel */}
+                    <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+                      <div className="absolute left-[5%] top-[9%] flex -rotate-12 flex-col gap-0.5 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+                        <span className="h-3 w-12 rounded-r-sm border-2 border-black bg-[#F9C5D5] shadow-[inset_4px_0_0_#D9799B]" />
+                        <span className="h-3 w-14 rounded-r-sm border-2 border-black bg-[#D4C7F9] shadow-[inset_4px_0_0_#8B72C8]" />
+                        <span className="h-3 w-11 rounded-r-sm border-2 border-black bg-[#F4D36B] shadow-[inset_4px_0_0_#C79B28]" />
+                      </div>
+                      <div className="absolute right-[7%] top-[13%] flex rotate-[13deg] flex-col gap-0.5 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+                        <span className="h-3 w-10 rounded-r-sm border-2 border-black bg-[#D4C7F9] shadow-[inset_4px_0_0_#8B72C8]" />
+                        <span className="h-3 w-12 rounded-r-sm border-2 border-black bg-[#F9C5D5] shadow-[inset_4px_0_0_#D9799B]" />
+                      </div>
+                      <div className="absolute left-[2%] top-[43%] flex -rotate-6 flex-col gap-0.5 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+                        <span className="h-3 w-10 rounded-r-sm border-2 border-black bg-[#F4D36B] shadow-[inset_4px_0_0_#C79B28]" />
+                        <span className="h-3 w-12 rounded-r-sm border-2 border-black bg-[#F9C5D5] shadow-[inset_4px_0_0_#D9799B]" />
+                      </div>
+                      <div className="absolute right-[3%] top-[42%] flex rotate-[9deg] flex-col gap-0.5 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+                        <span className="h-3 w-12 rounded-r-sm border-2 border-black bg-[#D4C7F9] shadow-[inset_4px_0_0_#8B72C8]" />
+                        <span className="h-3 w-10 rounded-r-sm border-2 border-black bg-[#F4D36B] shadow-[inset_4px_0_0_#C79B28]" />
+                      </div>
+                      <div className="absolute bottom-[14%] left-[8%] flex rotate-[8deg] flex-col gap-0.5 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+                        <span className="h-3 w-12 rounded-r-sm border-2 border-black bg-[#F9C5D5] shadow-[inset_4px_0_0_#D9799B]" />
+                        <span className="h-3 w-14 rounded-r-sm border-2 border-black bg-[#D4C7F9] shadow-[inset_4px_0_0_#8B72C8]" />
+                        <span className="h-3 w-10 rounded-r-sm border-2 border-black bg-[#F4D36B] shadow-[inset_4px_0_0_#C79B28]" />
+                      </div>
+                      <div className="absolute bottom-[17%] right-[7%] flex -rotate-12 flex-col gap-0.5 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
+                        <span className="h-3 w-10 rounded-r-sm border-2 border-black bg-[#F4D36B] shadow-[inset_4px_0_0_#C79B28]" />
+                        <span className="h-3 w-12 rounded-r-sm border-2 border-black bg-[#F9C5D5] shadow-[inset_4px_0_0_#D9799B]" />
+                      </div>
+                      <span className="absolute left-[22%] top-[7%] rotate-12 text-2xl text-black/70">✦</span>
+                      <span className="absolute right-[22%] bottom-[9%] -rotate-12 text-xl text-black/70">✳</span>
                     </div>
                   </div>
 
