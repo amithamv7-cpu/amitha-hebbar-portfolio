@@ -171,27 +171,11 @@ export function PortfolioPage() {
                       decoding="async"
                       className="absolute inset-0 h-full w-full -translate-y-[6%] scale-[1.38] object-cover object-[center_14%]"
                     />
-                    {/* No-text stickers distributed evenly through the open spaces */}
-                    <div aria-hidden className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
-                      <span className="absolute left-[8%] top-[15%] flex h-9 w-9 rotate-[-14deg] items-center justify-center rounded-xl border-2 border-black bg-[#F9C5D5] text-2xl leading-none text-black shadow-[3px_3px_0_#000]">✿</span>
-                      <span className="absolute right-[9%] top-[18%] flex h-8 w-8 rotate-[12deg] items-center justify-center rounded-full border-2 border-black bg-[#F4D36B] text-xl leading-none text-black shadow-[3px_3px_0_#000]">✦</span>
-                      <span className="absolute left-[7%] top-[49%] flex h-8 w-8 rotate-[-9deg] items-center justify-center rounded-lg border-2 border-black bg-[#D4C7F9] text-xl leading-none text-black shadow-[3px_3px_0_#000]">♥</span>
-                      <span className="absolute right-[8%] top-[55%] flex h-9 w-9 rotate-[13deg] items-center justify-center rounded-xl border-2 border-black bg-[#BDE8E2] text-2xl leading-none text-black shadow-[3px_3px_0_#000]">✳</span>
-                      <span className="absolute left-[23%] bottom-[21%] flex h-7 w-7 rotate-[14deg] items-center justify-center rounded-full border-2 border-black bg-white text-lg leading-none text-black shadow-[2px_2px_0_#000]">✧</span>
-                    </div>
-                    {/* Scattered editorial doodles fill the open spaces around the portrait */}
-                    <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-                      <span className="absolute left-[7%] top-[8%] -rotate-12 font-display text-5xl leading-none text-[#F9C5D5] [text-shadow:2px_2px_0_#000,-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000]">✳</span>
-                      <span className="absolute right-[8%] top-[12%] rotate-12 font-display text-4xl text-[#D4C7F9] [text-shadow:2px_2px_0_#000,-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000]">✦</span>
-                      <span className="absolute right-[5%] top-[42%] rotate-12 font-display text-5xl leading-none text-[#F9C5D5] [text-shadow:2px_2px_0_#000,-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000]">✷</span>
-                      <span className="absolute bottom-[18%] left-[7%] -rotate-12 font-display text-5xl leading-none text-[#D4C7F9] [text-shadow:2px_2px_0_#000,-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000]">✧</span>
-                      <span className="absolute left-[28%] top-[6%] h-3 w-3 rounded-full border-2 border-black bg-[#F4D36B] shadow-[2px_2px_0_#000]" />
-                      <span className="absolute right-[27%] bottom-[8%] h-4 w-4 rounded-full border-2 border-black bg-[#D4C7F9] shadow-[2px_2px_0_#000]" />
-                      <span className="absolute left-[8%] top-[34%] -rotate-12 font-display text-4xl leading-none text-[#F4D36B] [text-shadow:2px_2px_0_#000,-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000]">✿</span>
-                      <span className="absolute left-[10%] bottom-[39%] rotate-[-28deg] font-display text-3xl text-black">〰</span>
-                      <span className="absolute right-[12%] top-[27%] rotate-12 font-display text-3xl text-black">＋</span>
-                      <span className="absolute bottom-[14%] right-[8%] rotate-12 rounded-lg border-[3px] border-black bg-[#F4D36B] px-2 py-1 font-display text-xl font-black leading-none text-black shadow-[3px_3px_0_#000]">✎</span>
-                      <span className="absolute left-[24%] bottom-[7%] rotate-12 font-display text-2xl text-black">•••</span>
+                    {/* Small sticker cluster kept in the clear space above the portrait */}
+                    <div aria-hidden className="pointer-events-none absolute inset-x-0 top-[2%] z-10 flex items-center justify-center gap-3">
+                      <span className="flex h-7 w-7 rotate-[-12deg] items-center justify-center rounded-lg border-2 border-black bg-[#F9C5D5] text-xl leading-none text-black shadow-[2px_2px_0_#000]">✿</span>
+                      <span className="flex h-6 w-6 rotate-[10deg] items-center justify-center rounded-full border-2 border-black bg-[#F4D36B] text-base leading-none text-black shadow-[2px_2px_0_#000]">✦</span>
+                      <span className="flex h-7 w-7 rotate-[12deg] items-center justify-center rounded-lg border-2 border-black bg-[#D4C7F9] text-lg leading-none text-black shadow-[2px_2px_0_#000]">♥</span>
                     </div>
                   </div>
 
