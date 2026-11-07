@@ -171,11 +171,13 @@ export function PortfolioPage() {
                       decoding="async"
                       className="absolute inset-0 h-full w-full -translate-y-[6%] scale-[1.38] object-cover object-[center_14%]"
                     />
-                    {/* Tiny editorial accents in the open space above the portrait */}
-                    <div aria-hidden className="pointer-events-none absolute inset-x-0 top-[3%] z-10 flex items-center justify-center gap-3">
-                      <span className="h-2 w-2 rotate-45 border-2 border-black bg-[#F9C5D5] shadow-[2px_2px_0_#000]" />
-                      <span className="font-mono text-[9px] font-black tracking-[0.2em] text-black">✳  MAKE IT MATTER  ✳</span>
-                      <span className="h-2 w-2 rotate-45 border-2 border-black bg-[#D4C7F9] shadow-[2px_2px_0_#000]" />
+                    {/* Five tiny sticker-style doodles — no text */}
+                    <div aria-hidden className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
+                      <span className="absolute left-[12%] top-[5%] flex h-9 w-9 rotate-[-12deg] items-center justify-center rounded-xl border-2 border-black bg-[#F9C5D5] text-2xl leading-none text-black shadow-[3px_3px_0_#000]">✿</span>
+                      <span className="absolute left-[34%] top-[3%] flex h-7 w-7 rotate-[10deg] items-center justify-center rounded-full border-2 border-black bg-[#F4D36B] text-xl leading-none text-black shadow-[2px_2px_0_#000]">✦</span>
+                      <span className="absolute right-[31%] top-[4%] flex h-8 w-8 rotate-[-8deg] items-center justify-center rounded-lg border-2 border-black bg-[#D4C7F9] text-xl leading-none text-black shadow-[3px_3px_0_#000]">♥</span>
+                      <span className="absolute right-[10%] top-[8%] flex h-9 w-9 rotate-[12deg] items-center justify-center rounded-xl border-2 border-black bg-[#BDE8E2] text-2xl leading-none text-black shadow-[3px_3px_0_#000]">✳</span>
+                      <span className="absolute right-[47%] top-[17%] flex h-6 w-6 rotate-[14deg] items-center justify-center rounded-full border-2 border-black bg-white text-base leading-none text-black shadow-[2px_2px_0_#000]">✧</span>
                     </div>
                     {/* Scattered editorial doodles fill the open spaces around the portrait */}
                     <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
