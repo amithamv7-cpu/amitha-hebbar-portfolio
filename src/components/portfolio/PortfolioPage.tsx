@@ -171,11 +171,11 @@ export function PortfolioPage() {
                       decoding="async"
                       className="absolute inset-0 h-full w-full -translate-y-[6%] scale-[1.38] object-cover object-[center_14%]"
                     />
-                    {/* Small neo-brutalist sticker in the clear space above the portrait */}
-                    <div aria-hidden className="pointer-events-none absolute inset-x-0 top-[3%] z-10 flex justify-center">
-                      <span className="-rotate-3 rounded-full border-2 border-black bg-[#F4D36B] px-3 py-1 font-mono text-[9px] font-black tracking-[0.16em] text-black shadow-[3px_3px_0_#000] sm:text-[10px]">
-                        CREATIVE MODE
-                      </span>
+                    {/* Tiny editorial accents in the open space above the portrait */}
+                    <div aria-hidden className="pointer-events-none absolute inset-x-0 top-[3%] z-10 flex items-center justify-center gap-3">
+                      <span className="h-2 w-2 rotate-45 border-2 border-black bg-[#F9C5D5] shadow-[2px_2px_0_#000]" />
+                      <span className="font-mono text-[9px] font-black tracking-[0.2em] text-black">✳  MAKE IT MATTER  ✳</span>
+                      <span className="h-2 w-2 rotate-45 border-2 border-black bg-[#D4C7F9] shadow-[2px_2px_0_#000]" />
                     </div>
                     {/* Scattered editorial doodles fill the open spaces around the portrait */}
                     <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
