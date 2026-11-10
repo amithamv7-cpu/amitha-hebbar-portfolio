@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Outlet,
   Link,
@@ -127,6 +128,9 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      {/* Vercel Web Analytics: page views, unique visitors, referrers. Only sends data
+          when deployed on Vercel with Analytics enabled in the project dashboard. */}
+      <Analytics />
     </QueryClientProvider>
   );
 }
